@@ -4,14 +4,17 @@ nav_order: 2
 ---
 
 # Getting started
-{: .no_toc }
 
-1. TOC
-{:toc}
+An Atlas instance is a deployment with its own users and apps. Ask your instance administrator for the launcher address and access to the apps you need.
 
-This page is a placeholder. Replace it with the sign-in and first-steps guide for an Atlas instance.
+## Open Atlas in your browser
 
-## What you need
+1. Open the launcher and choose the sign-in option configured for your instance.
+2. Open an app from the launcher. If an app is missing, ask your administrator whether it is installed and whether your account has access.
+3. If you are working with project files or documents, open [Workspace]({{ site.baseurl }}{% link docs/apps/workspace.md %}) and select a project you have access to.
 
-- An account on an Atlas instance, and an entitlement for the app you want to use (`reader`, `reviewer`, `writer` or `admin`).
-- A browser, or an agent that speaks MCP.
+## Use Atlas with an agent
+
+Ask your administrator for the Atlas plugin or MCP connection details for your agent client. Sign in when the client prompts you, then start with a request that names the app and the project or document you want to work with.
+
+Browse the [app directory]({{ site.baseurl }}{% link docs/apps/index.md %}) to choose a tool for your task.

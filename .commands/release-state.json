@@ -1,9 +1,9 @@
 {
   "core": {
     "repository": "delzubu/atlas-core",
-    "version": "1.1.1",
-    "commit": "d884532538b23fb96cb9043e865c6d0de200150c",
-    "tag": "core-v1.1.1"
+    "version": "1.1.2",
+    "commit": "0a3e6e8b83ed1a34007aa7388e39d74bd00d44b2",
+    "tag": "core-v1.1.2"
   },
   "hobby": {
     "repository": "delzubu/atlas-hobby",

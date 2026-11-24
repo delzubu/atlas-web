@@ -46,6 +46,10 @@ Validation checks the configuration without Azure calls. With a provider configu
 
 Follow `INSTALL.md` and `devops/DEPLOY.md` in the Core repository for the full sequence. Prepare the Azure subscription and the Google or Microsoft Entra ID registration for your instance. Deploy infrastructure and the backend, configure the sign-in redirect URIs and bootstrap the required stores. Deploy the website, register OAuth clients and create the initial authorised user. Seed the Core library and verify sign-in and app access.
 
+## Upgrade Core
+
+Follow the Core deployment guide for the upgrade. Run `atlas-admin bootstrap` again when a release adds Identity storage containers, as Core 1.1.2 does for temporary Search connections. Bootstrap is safe to rerun. Identity can also create a missing known container on first use. Seed the updated Core library to make the release’s playbooks available.
+
 ## Add Hobby or Work
 
 1. Have an instance administrator create or retrieve the instance deploy key in Identity under **Administration → Modules → Deploy key**.

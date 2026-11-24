@@ -13,6 +13,16 @@ Core, Hobby and Work are versioned independently. The first entry for each modul
 ## 2026.11.24
 {: .release-date }
 
+### Core 1.1.2
+{: .release-module }
+
+Search writers can temporarily connect their own Neo4j database and query it from the web app or an agent. The new graph-query playbook helps an agent inspect the schema and use the graph as evidence for an answer.
+
+- Connect a database over HTTPS, edit its address to reconnect, or disconnect it when finished. Connections expire after a day without use. [Temporary databases](https://github.com/delzubu/atlas-core/pull/31) · [Reconnecting](https://github.com/delzubu/atlas-core/pull/35)
+- Use keyword, vector and read-only Cypher queries on your graph. Inspect labels, relationship types and indexes in Statistics. [Query your own graph database]({{ site.baseurl }}{% link docs/playbooks/core.md %}#query-your-graph)
+- Added a guide to connecting Neo4j from your computer and updated HTTPS requests to use the Query API’s supported fields. [Connection guide](https://github.com/delzubu/atlas-core/pull/32) · [Query API compatibility](https://github.com/delzubu/atlas-core/pull/33)
+- Identity can create missing known storage containers on first use and shows a sign-in error when Microsoft sign-in is refused. Search reports storage failures as service unavailable. [Identity and Search fixes](https://github.com/delzubu/atlas-core/pull/34)
+
 ### Core 1.1.1
 {: .release-module }
 

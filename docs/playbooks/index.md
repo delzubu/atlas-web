@@ -20,7 +20,7 @@ The agent can find available playbooks through Workspace and open them by their 
 
 ## Browse the library
 
-- [Core playbooks]({{ site.baseurl }}{% link docs/playbooks/core.md %}) for knowledge-base setup.
+- [Core playbooks]({{ site.baseurl }}{% link docs/playbooks/core.md %}) for knowledge-base setup and querying your own graph.
 - [Hobby playbooks]({{ site.baseurl }}{% link docs/playbooks/hobby.md %}) for language practice, study, worldbuilding and campaigns.
 - [Work playbooks]({{ site.baseurl }}{% link docs/playbooks/work.md %}) for proposals, stakeholder engagement, meetings and presentations.
 - [Project templates]({{ site.baseurl }}{% link docs/playbooks/templates.md %}) for ready-made Workspace projects.

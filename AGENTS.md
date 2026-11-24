@@ -47,4 +47,4 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 
 ## Git
 
-Own repository (`origin` = `delzubu/atlas-web`, branch `main`). New sections or design changes go on a feature branch; page edits and fixes go straight to `main` in small commits. Don't push unless asked. A push to `main` publishes the site.
+Own repository (`origin` = `delzubu/atlas-web`, branch `main`). For every update, run the relevant checks, commit the changes, and push them to `origin/main` as part of the task. New sections and design changes start on a feature branch and land by fast-forward. Page edits and fixes can go straight to `main` in small commits. A push to `main` publishes the site.

@@ -38,7 +38,7 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 - Front matter: `title`, `nav_order`, and for children `parent: <title>`; a section index uses `has_children: true` and a `permalink`. Link with `{% link path.md %}` so a broken link fails the build.
 - Content under `docs/` is documentation for readers, not instructions for agents.
 - Never put credentials, instance URLs, tenant or account identifiers, or anything from the `.env` files or `secrets/` in a page. Confidential `work` edition content (Oppos CRM data) does not belong here.
-- Do not hand-edit `_site/` or `.jekyll-cache/` (git-ignored, generated). `Gemfile.lock` is ignored too; the workflow resolves gems on each run.
+- Do not hand-edit `_site/` or `.jekyll-cache/` (git-ignored, generated). `Gemfile.lock` is ignored too: Pages resolves its own gems.
 
 ## Checks
 

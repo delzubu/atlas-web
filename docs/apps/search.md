@@ -19,7 +19,7 @@ Your administrator configures shared database connections. Use Knowledge base to
 
 ## Query your own Neo4j database
 
-With Search writer access, open **Your databases** and choose **Connect a database…**. Supply a name, a reachable HTTPS address for the Neo4j Query API and the database credentials. Search tests the connection before saving it. For setup on your own computer, see the [Neo4j connection guide](https://github.com/delzubu/atlas-core/blob/core-v1.1.2/apps/search/web/help/connect-local-neo4j.md).
+With Search writer access, open **Your databases** and choose **Connect a database…**. Supply a name, a reachable HTTPS address for the Neo4j Query API and the database credentials. Search tests the connection before saving it. For setup on your own computer, see the [Neo4j connection guide]({{ site.baseurl }}{% link docs/apps/search/connect-local-neo4j.md %}).
 
 For a database without Atlas Search datasets, select the **default** index to work with the whole graph. Open **Statistics** to inspect its labels, relationship types and indexes. In **Native query**, use **Keyword** for a full-text index, **Vector** for a vector index or **Graph** for read-only Cypher. To search a vector index with text, configure the embedding model used to build the index and an endpoint that can run it.
 

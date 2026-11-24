@@ -17,6 +17,15 @@ Use UML to edit PlantUML and Mermaid source with a live preview. Keep class, C4,
 
 The model folder keeps diagram source and related design notes together, so the team can edit or review them in Workspace.
 
+## Create your first diagram
+
+1. Press **New diagram** in the navigator toolbar (or Ctrl K, *New diagram*). Give it a title and choose its
+   kind: class, C4, sequence, state or activity.
+2. Write the diagram in the source editor on the left. The preview on the right redraws a moment after you stop typing. If
+   the text is wrong, the last good picture stays, dimmed, under the engine's message.
+3. Press **Save** (Ctrl S). Your change is saved only if nobody changed the model since you opened it; otherwise you are
+   told, and your text is kept.
+
 ## Playbooks supporting work
 
 [Plan a deck storyline]({{ site.baseurl }}{% link docs/playbooks/work.md %}#plan-deck-storyline) can help explain a design to a particular audience. Use exported diagrams as input when preparing that material.

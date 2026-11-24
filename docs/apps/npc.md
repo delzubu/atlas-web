@@ -17,6 +17,13 @@ Use NPC to keep character and group sheets for a Dungeons & Dragons campaign. Ma
 
 NPC is designed for the game master. It supports named stat-block versions, campaign history, canon refresh and publish, and optional tracking of friendship with player characters.
 
+## Run a between-sessions turn
+
+A plan can have a **clock** of 4, 6, 8 or 12 segments and a consequence for when it fills. Click the next empty segment to fill it (or the last filled one to empty it); a reason is kept in the history.
+A full clock turns red and adds a worklist item.
+
+After advancing the date, run the turn to see which clocks the time that passed suggests moving. Edit the numbers or untick rows; nothing moves until you apply.
+
 ## Playbooks supporting work
 
 The [campaign character playbooks]({{ site.baseurl }}{% link docs/playbooks/hobby.md %}#campaign-characters) cover creating and developing characters and groups, speaking in character, recording sessions and running faction turns.

@@ -36,6 +36,8 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 
 ## Writing pages
 
+- Put task walkthroughs in the relevant app guide under `docs/apps/`. In-app help in the source projects describes controls, screens and states and links to these walkthroughs. Keep published guide paths and anchors stable when app help links to them.
+
 - Front matter: `title`, `nav_order`, and for children `parent: <title>`; a section index uses `has_children: true` and a `permalink`. Link with `{{ site.baseurl }}{% link path.md %}` so Jekyll 3 validates the target and includes the project site prefix.
 - Content under `docs/` is documentation for readers, not instructions for agents.
 - Never put credentials, instance URLs, tenant or account identifiers, or anything from the `.env` files or `secrets/` in a page. Confidential `work` edition content (Oppos CRM data) does not belong here.

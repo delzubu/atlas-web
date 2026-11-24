@@ -7,7 +7,9 @@ description: "Atlas, the Light Factory: documentation for the Atlas suite."
 url: https://delzubu.github.io
 baseurl: /atlas-web
 
-theme: just-the-docs
+# Branch-based GitHub Pages build (Actions are not used): the theme is loaded
+# remotely, pinned to a release.
+remote_theme: just-the-docs/just-the-docs@v0.12.0
 color_scheme: atlas
 logo: /assets/images/atlas-logo.svg
 favicon_ico: /favicon.svg
@@ -35,6 +37,7 @@ aux_links:
 aux_links_new_tab: true
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-include-cache
 

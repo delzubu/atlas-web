@@ -8,9 +8,9 @@ The public documentation site of Atlas, published with GitHub Pages from `github
 
 ## Stack
 
-- Jekyll 4 with the **Just the Docs** theme (`theme: just-the-docs` in `_config.yml`, gem pinned in `Gemfile`). Navigation, search and layout come from the theme; do not copy its layouts here unless a change cannot be made any other way.
-- Built and deployed by `.github/workflows/pages.yml` (build on every push and pull request, deploy from `main`). Pages → Source must be set to **GitHub Actions** in the repository settings. Do not switch to the branch-based build: it would limit the site to the themes GitHub allows.
-- Local preview: `bundle install && bundle exec jekyll serve` (Ruby 3.x). Ruby is not installed on the owner's machine by default, so a change may be unbuilt: say so rather than claim it renders.
+- Jekyll with the **Just the Docs** theme, loaded as `remote_theme: just-the-docs/just-the-docs@<release>` (pinned in `_config.yml`; the `jekyll-remote-theme` plugin is on GitHub's allowed list). Navigation, search and layout come from the theme; do not copy its layouts here unless a change cannot be made any other way.
+- Built by GitHub Pages' own **branch-based (legacy) build** from `main`, root folder (Settings → Pages → Deploy from a branch). **GitHub Actions is not used** (the owner has none available): don't add a workflow. That build runs the `github-pages` gem's Jekyll 3.x, so only its allowed plugins work; keep `Gemfile` in line with it.
+- Live at https://delzubu.github.io/atlas-web/ . Local preview: `bundle install && bundle exec jekyll serve` (Ruby 3.x). Ruby is not installed on the owner's machine by default, so a change may be unbuilt: say so rather than claim it renders.
 
 ## Layout
 
@@ -42,9 +42,9 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 
 ## Checks
 
-- Narrowest check: `bundle exec jekyll build` (fails on broken `{% link %}` tags and bad Sass). CI runs the same build on pull requests.
+- Narrowest check: `bundle exec jekyll build` (fails on broken `{% link %}` tags and bad Sass). There is no CI; the Pages build log (Settings → Pages, or `gh api repos/delzubu/atlas-web/pages/builds/latest`) is the first sign of a broken push.
 - There are no unit tests. For a visual change, run the preview and look at it.
 
 ## Git
 
-Own repository (`origin` = `delzubu/atlas-web`, branch `main`). New sections or design changes go on a feature branch; page edits and fixes go straight to `main` in small commits. Don't push unless asked. Merge only on green.
+Own repository (`origin` = `delzubu/atlas-web`, branch `main`). New sections or design changes go on a feature branch; page edits and fixes go straight to `main` in small commits. Don't push unless asked. A push to `main` publishes the site.

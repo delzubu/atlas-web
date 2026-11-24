@@ -1,0 +1,28 @@
+// Atlas colour scheme for Just the Docs. Values come from the brand book 12.2
+// and the product tokens (core/docs/design/tokens.json): Graphite text, White
+// canvas, Mist chrome, Border rules. Links use the product's interaction blue;
+// Aubergine is identity only (logo, headings, accents), Coral is decorative.
+$white: #ffffff;
+$mist: #f6f7f9;
+$graphite: #1f2328;
+$aubergine: #5b21b6;
+
+$body-background-color: $white;
+$body-text-color: $graphite;
+$body-heading-color: $graphite;
+$link-color: #2563eb;
+$btn-primary-color: $aubergine;
+$feedback-color: $mist;
+
+$sidebar-color: $mist;
+$nav-child-link-color: #6b7280;
+$search-background-color: $white;
+$search-result-preview-color: #6b7280;
+$border-color: #e2e2e2;
+$code-background-color: $mist;
+$table-background-color: $white;
+$grey-dk-000: #6b7280;
+$grey-dk-100: #4b5563;
+$grey-dk-200: #374151;
+$grey-dk-250: #2b3138;
+$grey-dk-300: $graphite;

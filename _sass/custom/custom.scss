@@ -1,0 +1,28 @@
+// Atlas overrides on top of Just the Docs. Keep these few: the theme does the layout.
+:root {
+  --atlas-aubergine: #5b21b6;
+  --atlas-coral: #f97366;
+}
+
+// System sans throughout, as in the product (ui_design.md, Type).
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+// Headlines in Aubergine (brand book 12.3); body text stays Graphite.
+h1, .text-delta { color: var(--atlas-aubergine); }
+
+// The curved-underline motif: Coral, once per page, on the page title only.
+.main-content > h1:first-child {
+  display: inline-block;
+  padding-bottom: 0.25em;
+  background: linear-gradient(var(--atlas-coral), var(--atlas-coral)) left bottom / 100% 3px no-repeat;
+}
+
+.site-logo { background-size: contain; }
+
+// Focus ring as in the product: 2px accent, 2px offset.
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

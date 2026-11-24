@@ -17,3 +17,5 @@ Core provides the shared tools for Atlas. Use it to work with agents, organise p
 - [Planner]({{ site.baseurl }}{% link docs/apps/planner.md %}) · Build schedules and explore project timelines.
 - [Search]({{ site.baseurl }}{% link docs/apps/search.md %}) · Find relevant material across indexed knowledge.
 - [Workspace]({{ site.baseurl }}{% link docs/apps/workspace.md %}) · Keep project files, drafts, and reviews together.
+
+Explore [Core playbooks]({{ site.baseurl }}{% link docs/playbooks/core.md %}) and [project templates]({{ site.baseurl }}{% link docs/playbooks/templates.md %}#core) for workflows that use these tools.

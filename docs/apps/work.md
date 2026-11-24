@@ -15,3 +15,5 @@ Work helps teams think together and plan their work. Use it to explore decisions
 - [Oppos]({{ site.baseurl }}{% link docs/apps/oppos.md %}) · Review sales opportunities and follow related work.
 - [Stakeholders]({{ site.baseurl }}{% link docs/apps/stakeholders.md %}) · Keep a project register of the people involved in the work.
 - [UML]({{ site.baseurl }}{% link docs/apps/uml.md %}) · Build and maintain software design diagrams.
+
+Explore [Work playbooks]({{ site.baseurl }}{% link docs/playbooks/work.md %}) and [project templates]({{ site.baseurl }}{% link docs/playbooks/templates.md %}#work) for workflows that use these tools.

@@ -15,6 +15,7 @@ Atlas helps experts work with AI to explore ideas, build plans and models, and r
 
 [Get started]({{ site.baseurl }}{% link docs/getting-started.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Explore the apps]({{ site.baseurl }}{% link docs/apps/index.md %}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Browse playbooks]({{ site.baseurl }}{% link docs/playbooks/index.md %}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Develop Atlas]({{ site.baseurl }}{% link docs/developers/index.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---

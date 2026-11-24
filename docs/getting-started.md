@@ -15,6 +15,8 @@ An Atlas instance is a deployment with its own users and apps. Ask your instance
 
 ## Use Atlas with an agent
 
-Ask your administrator for the Atlas plugin or MCP connection details for your agent client. Sign in when the client prompts you, then start with a request that names the app and the project or document you want to work with.
+Open [Assistant]({{ site.baseurl }}{% link docs/apps/assistant.md %}) from an Atlas page if it is configured for your instance. To use a separate agent client, ask your administrator for the Atlas plugin or Model Context Protocol (MCP) connection details. Sign in when the client prompts you.
 
-Browse the [app directory]({{ site.baseurl }}{% link docs/apps/index.md %}) to choose a tool for your task.
+Name the app and the project or document you want the agent to use. For example, ask Planner to review dependencies in a schedule, or ask Search to find relevant evidence in a named index. The agent’s available tools and actions depend on its connections and permissions.
+
+Browse the [app directory]({{ site.baseurl }}{% link docs/apps/index.md %}) to choose a tool. Use a [playbook]({{ site.baseurl }}{% link docs/playbooks/index.md %}) when you want the agent to work through a defined process, or start a new workspace from a [project template]({{ site.baseurl }}{% link docs/playbooks/templates.md %}).

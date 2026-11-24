@@ -1,6 +1,6 @@
 ---
 title: Developers
-nav_order: 4
+nav_order: 5
 has_children: true
 permalink: /docs/developers/
 has_toc: false
@@ -8,7 +8,7 @@ has_toc: false
 
 # Develop Atlas
 
-Start with the project you want to change. Atlas Core provides sign-in, storage, several apps, and the shared packages. Optional editions build on Core and add apps to an Atlas instance.
+Start with the project you want to change. Atlas Core provides sign-in, storage, several apps, and the shared packages. Hobby and Work use released Core packages and each can be developed from its own checkout. You only need Core source locally when changing Core itself or deliberately testing an edition against a local Core change.
 
 Most app work starts in `apps/<app>/`. Python services live in `api/` and React and Vite web apps live in `web/`. Check the app's README and `AGENTS.md` for its commands and contracts.
 

@@ -21,4 +21,6 @@ nav_order: 2
 
 ## Dependencies
 
-Editions resolve Core as a prerequisite, and each edition declares a minimum supported Core version. Apps use shared packages for common code. An edition can discover another edition's optional capabilities through the instance's module registry at runtime.
+Hobby and Work resolve Core as a package dependency. Each edition declares a minimum supported Core version in `testing/suites.json`. No sibling Core checkout is needed, and the editions do not track a branch of Core. Core and the two editions release and deploy independently.
+
+Apps use shared packages for common code. An edition can discover another edition’s optional capabilities through the instance’s module registry at runtime. The edition projects have no build-time dependency on one another.

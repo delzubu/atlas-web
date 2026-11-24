@@ -22,6 +22,12 @@ h1, .text-delta { color: var(--atlas-aubergine); }
 
 .site-logo { background-size: contain; }
 
+.main-content .release-index {
+  th { background: $sidebar-color; }
+  th, td { min-width: 0; vertical-align: top; }
+  td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+}
+
 .main-content .release-date {
   display: flex;
   align-items: center;

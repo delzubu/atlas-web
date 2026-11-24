@@ -22,7 +22,7 @@ The public documentation site of Atlas, published with GitHub Pages from `github
 | `_includes/head_custom.html` | Favicon and theme colour |
 | `assets/images/`, `favicon.svg` | Logo files, copied from `core/docs/design/assets/` |
 | `index.md`, `404.md` | Home page and not-found page |
-| `docs/changelog.md` | Dated Core, Hobby and Work version history, under Home |
+| `docs/changelog.md`, `docs/changelog/` | Release-date index under Home and one detail page per date |
 | `docs/` | Content. `docs/apps/` holds bundle and app guides. `docs/playbooks/` holds the library guide and template catalog. `docs/developers/` covers development and deployment |
 
 ## Brand and design
@@ -48,8 +48,8 @@ On every new Core, Hobby or Work version, run the [release documentation command
 1. Check Core, Hobby and Work independently. Add one entry when a module's own version number changes. Core's version is in `VERSION` and its release labels are `core-vX.Y.Z`. Hobby and Work use `plugins.edition.version` in `plugins/instance.json` and their own `vX.Y.Z` labels. Core package tags, inherited Core tags in an edition, and an unchanged edition's Core dependency updates do not create extra entries.
 2. Locate the previous and current version labels in that module's repository and review the full commit range with `git log <previous>..<current>` and `git diff <previous>..<current>`. Use the committed version bump as the boundary when there is no tag. For a first standalone version, use the initial snapshot as the baseline. If a tag later appears for an already documented version, review through the tagged commit and update that entry.
 3. Read GitHub issues referenced by the commits and pull requests to understand the goal and the result. Follow migrated issues when relevant. Describe what shipped based on the commit range, since an issue may include work planned for a later version. Link relevant issues, pull requests or comparisons where they help readers. Keep private operational details and confidential data out of the public page.
-4. Group entries by release date, newest date first, using `## YYYY.MM.DD` followed by `{: .release-date }`. Use the version-bump commit date when a release label is absent. Put all modules that changed on a given date under the same heading. Use `### Core X.Y.Z`, `### Hobby X.Y.Z` or `### Work X.Y.Z`, followed by `{: .release-module }`, one paragraph summarising the change and a bulleted list of details. If a module has several versions on the same day, list its newest first.
-5. Run the site build and verify the changelog renders under Home, with working links and the intended date and version order.
+4. Put all entries for a date in `docs/changelog/YYYY-MM-DD.md`. Use a separate `## Module X.Y.Z` entry for every exact version. Add or update that date’s row in the index, with a one-sentence summary and patches rolled up by module and major/minor series. The release documentation command gives the page and row formats.
+5. Run the site build and verify the changelog renders under Home. Check links in both directions, newest-first dates, and that each index row reflects its detail page.
 
 ## Checks
 

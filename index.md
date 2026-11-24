@@ -2,6 +2,8 @@
 title: Home
 layout: home
 nav_order: 1
+has_children: true
+has_toc: false
 description: "Atlas, the Light Factory, is a human–AI co-creation platform for bespoke knowledge work."
 ---
 
@@ -25,3 +27,5 @@ Atlas helps experts work with AI to explore ideas, build plans and models, and r
 Use Atlas in the browser to organise research, build plans and models, or review work in progress. Agents can use Atlas tools through the Model Context Protocol (MCP), subject to the access they have been granted.
 
 Workspace gives people and agents a shared place to keep project files and review changes. For example, a team can keep its source notes and Planner schedule together, ask an agent to update the schedule, and review the result in the browser.
+
+[See what changed in Atlas]({{ site.baseurl }}{% link docs/changelog.md %}).

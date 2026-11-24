@@ -13,13 +13,28 @@ body {
 h1, .text-delta { color: var(--atlas-aubergine); }
 
 // The curved-underline motif: Coral, once per page, on the page title only.
-.main-content > h1:first-child {
+.main-content > h1:first-child,
+.main-content .release-title {
   display: inline-block;
   padding-bottom: 0.25em;
   background: linear-gradient(var(--atlas-coral), var(--atlas-coral)) left bottom / 100% 3px no-repeat;
 }
 
 .site-logo { background-size: contain; }
+
+.main-content .release-date {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e2e2;
+  color: var(--atlas-aubergine);
+  font-variant-numeric: tabular-nums;
+}
+
+.main-content .release-module {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
 
 // Focus ring as in the product: 2px accent, 2px offset.
 a:focus-visible, button:focus-visible, input:focus-visible {

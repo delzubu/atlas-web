@@ -3,6 +3,8 @@ title: Workspace
 parent: Core
 grand_parent: Apps
 nav_order: 6
+has_children: true
+has_toc: false
 ---
 
 # Workspace
@@ -15,7 +17,32 @@ Workspace gives people and agents a shared place to work on project files. Brows
 2. Use the file tree to open a document. Edit Markdown in the visual or source editor, or open a plan, map or model in its own app.
 3. Use comments to review work and examine file history or change sets to see what changed. Use **Look up** for the project’s configured knowledge sources.
 
-Upload files and use intake for supported Office documents, PDFs, saved email or web links. Intake keeps the original alongside derived material for review and reuse. The local sync tools support a checkout when you need to work on files outside the browser.
+Use [Workspace intake]({{ site.baseurl }}{% link docs/apps/workspace/intake.md %}) to bring in Office documents, PDFs, saved email and web links. The guide covers browser uploads, CLI intake, rendering previews, editable copies and links to individual pages or sections.
+
+## Start from Project home
+
+Open a workspace from the welcome screen or with **Open workspace…** in the Atlas menu. The picker lists pinned and personal projects first and lets you filter by project or ref. From an open file, use **Project overview** in the navigator or command palette to return to Project home.
+
+| Where | What you can do |
+| --- | --- |
+| **Project header** | Read the description and see who last changed the project. Pin it with the star or use **⋯ → Set as personal project** to designate where your personal TODOs live. |
+| **TODO** | Review active items from the project’s saved plans, ordered by deadline. Expand an item for its notes and available completion, progress and ETA actions. Select the plan label to open the source in Planner. |
+| **Maps, plans and models** | Browse document cards and previews. **Details** opens a document’s Workspace view. **Open in** opens its own app. Use **New plan** or another available **New** button to create a document in this workspace. |
+| **Configuration** | Expand this section to see the project’s **References**, **Look up** sources and reusable **Prompts**. |
+| **Recent activity** | See the last eight changes. For the complete record and undo, open **Changes**. |
+
+Available document types depend on the apps in your deployment and your access. The cards also open documents stored in system folders such as `.plans/` or `.maps/`.
+
+## Group related files into a bundle
+
+Use a bundle for a set of files that readers should enter through a main page. For example, put a research brief, source notes and drafts in one folder. The navigator can show the folder as one item, with the main page and a contents panel when you open it.
+
+1. Open the folder’s **⋯** menu or right-click it and choose **Make into a bundle…**.
+2. Pick a **Main page**. Workspace suggests a Markdown file, starting with one named after the folder or `README.md`. Choose **None** to open on the contents list.
+3. Choose whether to **Show as a single item in the file tree** and whether to **Show the contents panel**, then select **Make bundle**.
+4. Use the contents panel to open files or add one with **+**. Select the item marked **Main** to return to the entry page.
+
+Use **Copy link** on the bundle’s row to share the main page and contents panel. A link to an individual file opens that file alongside the panel. Use **Bundle settings…** to change the layout, or **Make a plain folder again** to remove the bundle settings while keeping the files.
 
 ## Work from a local checkout
 
@@ -51,8 +78,7 @@ Do not edit the files inside a system folder by hand in a checkout: they belong 
 
 ### Office files in a checkout
 
-`ws-tool git commit` ingests Office files you staged (it creates or refreshes their extraction folders and stages them too), so a push brings the text and pictures along. The same step
-is available alone as `ws-tool derive`, and `ws-tool intake <URL>` inside a checkout refreshes the file there (Intake).
+`ws-tool git commit` ingests staged Office files and includes their extracted text and available previews in the commit. See [Intake from the command line]({{ site.baseurl }}{% link docs/apps/workspace/intake.md %}#intake-from-the-command-line) for local and direct-to-workspace workflows.
 
 ### Conflicts
 

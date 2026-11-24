@@ -1,7 +1,8 @@
 ---
 title: Search
-parent: Apps
-nav_order: 4
+parent: Core
+grand_parent: Apps
+nav_order: 5
 ---
 
 # Search

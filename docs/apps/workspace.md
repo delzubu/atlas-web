@@ -1,7 +1,8 @@
 ---
 title: Workspace
-parent: Apps
-nav_order: 1
+parent: Core
+grand_parent: Apps
+nav_order: 6
 ---
 
 # Workspace

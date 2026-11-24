@@ -1,7 +1,8 @@
 ---
 title: Oppos
-parent: Apps
-nav_order: 15
+parent: Work
+grand_parent: Apps
+nav_order: 2
 ---
 
 # Oppos

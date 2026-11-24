@@ -1,7 +1,8 @@
 ---
 title: Stakeholders
-parent: Apps
-nav_order: 14
+parent: Work
+grand_parent: Apps
+nav_order: 3
 ---
 
 # Stakeholders

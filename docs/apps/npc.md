@@ -1,7 +1,8 @@
 ---
 title: NPC
-parent: Apps
-nav_order: 11
+parent: Hobby
+grand_parent: Apps
+nav_order: 4
 ---
 
 # NPC

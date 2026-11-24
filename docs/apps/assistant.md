@@ -1,7 +1,8 @@
 ---
 title: Assistant
-parent: Apps
-nav_order: 5
+parent: Core
+grand_parent: Apps
+nav_order: 1
 ---
 
 # Assistant

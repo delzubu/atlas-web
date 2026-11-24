@@ -1,7 +1,8 @@
 ---
 title: Causal
-parent: Apps
-nav_order: 12
+parent: Work
+grand_parent: Apps
+nav_order: 1
 ---
 
 # Causal

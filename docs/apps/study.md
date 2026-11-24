@@ -1,7 +1,8 @@
 ---
 title: Study
-parent: Apps
-nav_order: 9
+parent: Hobby
+grand_parent: Apps
+nav_order: 5
 ---
 
 # Study

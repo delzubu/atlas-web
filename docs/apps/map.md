@@ -1,7 +1,8 @@
 ---
 title: Map
-parent: Apps
-nav_order: 8
+parent: Hobby
+grand_parent: Apps
+nav_order: 2
 ---
 
 # Map

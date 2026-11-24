@@ -1,6 +1,7 @@
 ---
 title: Knowledge base
-parent: Apps
+parent: Core
+grand_parent: Apps
 nav_order: 3
 ---
 

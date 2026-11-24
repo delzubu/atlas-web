@@ -1,7 +1,8 @@
 ---
 title: Languages
-parent: Apps
-nav_order: 10
+parent: Hobby
+grand_parent: Apps
+nav_order: 1
 ---
 
 # Languages

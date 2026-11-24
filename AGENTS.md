@@ -22,7 +22,7 @@ The public documentation site of Atlas, published with GitHub Pages from `github
 | `_includes/head_custom.html` | Favicon and theme colour |
 | `assets/images/`, `favicon.svg` | Logo files, copied from `core/docs/design/assets/` |
 | `index.md`, `404.md` | Home page and not-found page |
-| `docs/` | Content. One folder per section; `docs/apps/` holds one page per Atlas app (`parent: Apps`) |
+| `docs/` | Content. `docs/apps/` holds bundle pages (`parent: Apps`) and app pages nested under their bundle in navigation |
 
 ## Brand and design
 

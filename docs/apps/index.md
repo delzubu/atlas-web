@@ -8,28 +8,22 @@ has_toc: false
 
 # Apps
 
-The apps you can open depend on which editions your Atlas instance has installed and the access your administrator has granted. Start with [Getting started]({{ site.baseurl }}{% link docs/getting-started.md %}) if you need help signing in.
+Atlas groups its apps into three bundles. The apps you can open depend on which bundles your instance has installed and the access your administrator has granted. Start with [Getting started]({{ site.baseurl }}{% link docs/getting-started.md %}) if you need help signing in.
 
-## Core
+## [Core]({{ site.baseurl }}{% link docs/apps/core.md %})
 
-- [Workspace]({{ site.baseurl }}{% link docs/apps/workspace.md %}) · Keep project files, drafts, and reviews together.
-- [Planner]({{ site.baseurl }}{% link docs/apps/planner.md %}) · Build schedules and explore project timelines.
-- [Knowledge base]({{ site.baseurl }}{% link docs/apps/knowledge-base.md %}) · Explore and maintain collections of Markdown articles.
-- [Search]({{ site.baseurl }}{% link docs/apps/search.md %}) · Find relevant material across indexed knowledge.
-- [Assistant]({{ site.baseurl }}{% link docs/apps/assistant.md %}) · Work with a hosted agent from within Atlas.
-- [Identity]({{ site.baseurl }}{% link docs/apps/identity.md %}) · Sign in and manage Atlas accounts and access.
+Core provides the shared tools for Atlas. Use it to work with agents, organise project files and knowledge, and build schedules.
 
-## Hobby
+[Assistant]({{ site.baseurl }}{% link docs/apps/assistant.md %}) &#124; [Identity]({{ site.baseurl }}{% link docs/apps/identity.md %}) &#124; [Knowledge base]({{ site.baseurl }}{% link docs/apps/knowledge-base.md %}) &#124; [Planner]({{ site.baseurl }}{% link docs/apps/planner.md %}) &#124; [Search]({{ site.baseurl }}{% link docs/apps/search.md %}) &#124; [Workspace]({{ site.baseurl }}{% link docs/apps/workspace.md %})
 
-- [Mapper]({{ site.baseurl }}{% link docs/apps/mapper.md %}) · Create and edit vector maps for towns, sites, and buildings.
-- [Map]({{ site.baseurl }}{% link docs/apps/map.md %}) · Explore the Greyhawk world map.
-- [Study]({{ site.baseurl }}{% link docs/apps/study.md %}) · Turn source material into learning paths and tests.
-- [Languages]({{ site.baseurl }}{% link docs/apps/languages.md %}) · Practise vocabulary, phrases, and grammar.
-- [NPC]({{ site.baseurl }}{% link docs/apps/npc.md %}) · Manage characters and groups for tabletop campaigns.
+## [Hobby]({{ site.baseurl }}{% link docs/apps/hobby.md %})
 
-## Work
+Hobby brings together tools for worldbuilding, tabletop campaigns, and personal learning.
 
-- [Causal]({{ site.baseurl }}{% link docs/apps/causal.md %}) · Map cause and effect, feedback loops, and possible interventions.
-- [UML]({{ site.baseurl }}{% link docs/apps/uml.md %}) · Build and maintain software design diagrams.
-- [Stakeholders]({{ site.baseurl }}{% link docs/apps/stakeholders.md %}) · Keep a project register of the people involved in the work.
-- [Oppos]({{ site.baseurl }}{% link docs/apps/oppos.md %}) · Review sales opportunities and follow related work.
+[Languages]({{ site.baseurl }}{% link docs/apps/languages.md %}) &#124; [Map]({{ site.baseurl }}{% link docs/apps/map.md %}) &#124; [Mapper]({{ site.baseurl }}{% link docs/apps/mapper.md %}) &#124; [NPC]({{ site.baseurl }}{% link docs/apps/npc.md %}) &#124; [Study]({{ site.baseurl }}{% link docs/apps/study.md %})
+
+## [Work]({{ site.baseurl }}{% link docs/apps/work.md %})
+
+Work helps teams think together and plan their work. Use it to explore decisions, design systems, manage stakeholders, and track opportunities.
+
+[Causal]({{ site.baseurl }}{% link docs/apps/causal.md %}) &#124; [Oppos]({{ site.baseurl }}{% link docs/apps/oppos.md %}) &#124; [Stakeholders]({{ site.baseurl }}{% link docs/apps/stakeholders.md %}) &#124; [UML]({{ site.baseurl }}{% link docs/apps/uml.md %})

@@ -1,7 +1,8 @@
 ---
 title: UML
-parent: Apps
-nav_order: 13
+parent: Work
+grand_parent: Apps
+nav_order: 4
 ---
 
 # UML

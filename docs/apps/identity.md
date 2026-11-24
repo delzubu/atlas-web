@@ -1,7 +1,8 @@
 ---
 title: Identity
-parent: Apps
-nav_order: 6
+parent: Core
+grand_parent: Apps
+nav_order: 2
 ---
 
 # Identity

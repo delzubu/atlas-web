@@ -1,7 +1,8 @@
 ---
 title: Planner
-parent: Apps
-nav_order: 2
+parent: Core
+grand_parent: Apps
+nav_order: 4
 ---
 
 # Planner

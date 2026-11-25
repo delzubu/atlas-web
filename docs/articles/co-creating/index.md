@@ -31,3 +31,7 @@ You need access to an Atlas workspace and an agent with permission to read and c
 The example prompts are suggestions, not commands that run automatically. Save any open edits before asking an agent to change the same file, review its results, and decide what to accept.
 
 See [Getting started]({{ site.baseurl }}{% link docs/getting-started.md %}) for help connecting to Atlas.
+
+## Reuse what you have learned
+
+Once you have a successful way of working, preserve it for future projects. Read [Make Atlas your own: templates, playbooks and the library]({{ site.baseurl }}{% link docs/articles/make-atlas-your-own.md %}) to learn how.

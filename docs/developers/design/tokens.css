@@ -1,0 +1,130 @@
+/* Atlas tokens: the canonical values. docs/design/tokens.json mirrors this file; docs/design/ui_design.md (Color) says what each one is for.
+ * One theme by design: black on white, like a printed page. Atlas does not follow the OS theme. */
+:root {
+  color-scheme: light;
+
+  /* Color */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --fg: #1f2328; /* brand Graphite */
+  --muted: #6b7280;
+  --border: #e2e2e2;
+  --hover: #eef0f2;
+  --selected: #dbeafe;
+  --accent: #2563eb;
+  --on-accent: #ffffff;
+  /* Identity only (brand Aubergine and Coral): the mark, launcher eyebrows, the cover headline and its underline. Never interaction or status. */
+  --brand: #5b21b6;
+  --brand-highlight: #f97366;
+  --danger: #b91c1c;
+  --success: #16a34a;
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --overlay: rgba(0, 0, 0, 0.4);
+  --code-bg: #f4f4f5;
+  /* The frame: the AppBar is ink, the page stays black on white. */
+  --chrome-ink: #1f2328;
+  --on-chrome: #f5f6f7;
+  --on-chrome-muted: #a9b0b8;
+  --chrome-hover: rgba(255, 255, 255, 0.1);
+  --chrome-line: rgba(255, 255, 255, 0.18);
+  /* Item-type icon tints (each >= 3:1 on surface and on selected). */
+  --icon-folder: #a16207;
+  --icon-md: #2563eb;
+  --icon-image: #15803d;
+  --icon-data: #7c3aed;
+  --icon-code: #475569;
+  --icon-file: #6b7280;
+  --icon-layer: #0f766e;
+  --icon-task: #1d4ed8;
+  --icon-summary: #92400e;
+  --icon-milestone: #be123c;
+  --icon-hammock: #6d28d9;
+  --icon-subproject: #0e7490;
+  --icon-bundle: #9333ea;
+  /* Timeline highlight palette: rule colours, each >= 4.5:1 on white, used as border/dot with a light tint behind dark text. */
+  --hl-1: #1d4ed8;
+  --hl-2: #b45309;
+  --hl-3: #047857;
+  --hl-4: #a21caf;
+  --hl-5: #b91c1c;
+  --hl-6: #0e7490;
+
+  /* Type */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --text-caption: 11px;
+  --text-meta: 12px;
+  --text-ui: 13px;
+  --text-body: 15px;
+  --text-heading: 18px;
+  --text-title: 20px;
+
+  /* Spacing / radius scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Layout */
+  --appbar-h: 40px;
+  --docheader-h: 40px;
+  --row-compact: 24px;
+  --row-default: 28px;
+  --row-touch: 44px;
+  --rail-w: 44px;
+  --panel-w: 320px;
+  --inspector-w: 360px;
+  --handle-w: 28px;
+  --handle-h: 48px;
+  --measure: 720px;
+  /* Touch and small screens (docs/design/mobile.md) */
+  --actionbar-h: 56px;
+  --text-input-touch: 16px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* Elevation: only floating things cast shadows */
+  --shadow-float: 0 3px 14px #00000014;
+  --shadow-popup: 0 12px 44px #00000033;
+  --shadow-overlay: 4px 0 24px #00000022;
+
+  /* Stacking */
+  --z-overlay-panel: 200;
+  --z-chrome: 300;
+  --z-task: 310;
+  --z-scrim: 650;
+  --z-popup: 700;
+  --z-toast: 1200;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  background: var(--surface);
+}

@@ -16,3 +16,7 @@ Most app work starts in `apps/<app>/`. Python services live in `api/` and React 
 2. [Find your way around the modules]({{ site.baseurl }}{% link docs/developers/modules.md %})
 3. [Understand instance and edition deployment]({{ site.baseurl }}{% link docs/developers/deployment.md %})
 4. [See the SDK documentation outline]({{ site.baseurl }}{% link docs/developers/sdk.md %})
+
+## Design system
+
+Read the [Atlas design system]({{ site.baseurl }}{% link docs/developers/design/index.md %}) for the product brand book, UI and UX guides, responsive design, component specifications and visual examples.

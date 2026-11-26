@@ -1,7 +1,7 @@
 ---
 title: KB versus Search — which one to use?
 parent: Articles
-nav_order: 1
+nav_order: 8
 description: "Choose between lightweight knowledge organisation and semantic retrieval, or combine both for your work with Atlas."
 ---
 
@@ -10,6 +10,8 @@ description: "Choose between lightweight knowledge organisation and semantic ret
 You want to make knowledge available to yourself, your colleagues or an AI agent. Atlas offers two complementary tools: Knowledge base (KB) and Search. Both help you find information, but they approach the problem differently.
 
 **KB helps you locate and navigate structured knowledge. Search helps you retrieve relevant information from a body of knowledge, even when you do not know where to look.**
+
+Both tools are available to compatible agents through Atlas rather than being tied to a specific model's built-in memory. A knowledge base or Search collection can support work across different AI clients and subscriptions, subject to your access and each client's supported tools. Switching agents does not require rebuilding your knowledge collection.
 
 ## Knowledge base: structure knowledge as you work
 

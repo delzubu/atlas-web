@@ -1,17 +1,18 @@
 ---
 title: "Continuing work across conversations and agents"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 2
+parent: Articles
+nav_order: 3
 ---
 
 # Continuing work across conversations and agents
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 2 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 2 of 6
 
 Yesterday's agent understood the exhibition project, its audience and why you rejected the first interpretation of the market square. Today's agent may have none of that context. Even the same agent can lose details as a conversation grows.
 
 The solution is not to paste every previous message into every new conversation. Keep the knowledge needed to resume the work in the project itself.
+
+This is especially useful when you use more than one AI subscription. You might start the project in Claude, continue research with ChatGPT and delegate a review to a coding agent with the required Atlas connection. Each can inspect the same saved material. The handoff is the bridge between conversations and providers, not a transfer of their private chat histories. You can choose the model that fits the next task, or switch when a provider's usage limit interrupts work.
 
 ## Give each kind of context a place
 

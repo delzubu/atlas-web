@@ -1,17 +1,18 @@
 ---
 title: "Working with documents beyond Markdown"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 3
+parent: Articles
+nav_order: 4
 ---
 
 # Working with documents beyond Markdown
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 3 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 3 of 6
 
 Real projects rarely start with neatly written Markdown. You may receive a PDF, a PowerPoint presentation, a spreadsheet, a Word document or an email with attachments. People need to see what the source says and how it is presented; an agent needs accessible content it can interpret.
 
 Workspace intake helps bridge those needs without discarding the original.
+
+Keeping sources in Atlas also means that you do not have to upload the same archive into each new AI conversation or service. Authorised agents with compatible tools can read the material from the shared project. The extraction and source references persist independently of the agent; each agent's ability to interpret them still depends on its capabilities and access.
 
 ## Bring in the sources
 

@@ -1,17 +1,24 @@
 ---
 title: "Working together in a shared workspace"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 1
+parent: Articles
+nav_order: 2
 ---
 
 # Working together in a shared workspace
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 1 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 1 of 6
 
 A useful conversation with an agent often ends with a long answer. You copy it into a document, edit it, paste the changed version back into chat and ask for another revision. Before long there are several copies, and neither you nor the agent is certain which one is current.
 
 Workspace gives both of you a common place to keep the work. The conversation is where you discuss it; the workspace is where the work persists.
+
+## Choose the agent, keep the work
+
+Atlas — The Light Factory separates the workspace from the AI platform. You can work with a compatible agent in ChatGPT, Claude or another MCP client, then continue with a different one using the same Atlas files, comments and revision history. For example, delegate a first draft using one subscription, ask another agent to review it independently, and edit the result yourself in the browser. You do not need to export the draft and re-import it just to switch agents.
+
+Provider-native artifacts, such as [Claude Artifacts](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them), also support creating, editing and sharing work. They are useful when working within that platform. Atlas takes a different approach: the persistent project and its review process are independent of the AI service that helped produce them.
+
+Model-agnostic does not mean every client or subscription supports every operation. Your chosen client needs the appropriate MCP capabilities, connection and permissions. Atlas does not transfer conversation history, combine subscription quotas or provide access to models you have not subscribed to.
 
 ## Start with a shared artifact
 
@@ -69,4 +76,4 @@ See the [Workspace guide]({{ site.baseurl }}{% link docs/apps/workspace.md %}) a
 
 ---
 
-[Series overview]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · [Next: Continuing work across conversations and agents]({{ site.baseurl }}{% link docs/articles/co-creating/continuing-work.md %})
+[Series overview]({{ site.baseurl }}{% link docs/articles/index.md %}) · [Next: Continuing work across conversations and agents]({{ site.baseurl }}{% link docs/articles/co-creating/continuing-work.md %})

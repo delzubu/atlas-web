@@ -1,17 +1,18 @@
 ---
 title: "Organising complex documents into bundles"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 4
+parent: Articles
+nav_order: 5
 ---
 
 # Organising complex documents into bundles
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 4 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 4 of 6
 
 A useful report can become difficult to maintain as it grows. Its main narrative, evidence tables, illustrations and working notes may be easier to edit separately, but readers should not have to reconstruct the document by exploring a large directory.
 
 A bundle lets a folder behave like one document in the Workspace navigator while retaining the files inside it.
+
+Because a bundle is made of ordinary workspace files, its structure survives a change of agent or provider. A second agent can inspect the same main page and supporting material, rather than reconstructing the document from the first agent's conversation.
 
 ## A document can be more than one file
 

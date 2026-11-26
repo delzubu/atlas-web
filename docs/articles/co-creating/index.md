@@ -1,8 +1,7 @@
 ---
 title: Co-creating with AI
 parent: Articles
-nav_order: 2
-has_children: true
+nav_exclude: true
 has_toc: false
 permalink: /docs/articles/co-creating/
 ---
@@ -11,7 +10,7 @@ permalink: /docs/articles/co-creating/
 
 A conversation can help you think through a problem, but a substantial piece of work rarely fits into one conversation. It evolves as you discover new information, change your mind and review what has been produced.
 
-This series shows how to work with an AI agent on persistent, shared material in Atlas. Start with a document, learn to review and revise it together, keep the context needed to resume work, and develop increasingly structured results.
+This series shows how to work with AI agents on persistent, shared material in Atlas — The Light Factory. Atlas is model-agnostic: the project stays in Atlas while you choose a compatible agent or AI subscription for each task. Start with a document, learn to review and revise it together, keep the context needed to resume work, and develop increasingly structured results.
 
 Throughout the series we use an illustrative project: preparing a small local-history exhibition about how a fictional town's market square changed over time. The example is invented to demonstrate the method; its historical details are not claims about an actual town. You can follow the same approach with your own research, work project or creative undertaking.
 

@@ -28,4 +28,12 @@ Use Atlas in the browser to organise research, build plans and models, or review
 
 Workspace gives people and agents a shared place to keep project files and review changes. For example, a team can keep its source notes and Planner schedule together, ask an agent to update the schedule, and review the result in the browser.
 
+## Your work, your choice of AI
+
+Atlas is model-agnostic. Keep your project files, models, review comments and working instructions in Atlas, and choose compatible agents across AI providers and subscriptions. Start with one agent, continue with another and review the same artifacts in your browser. The work outlives the conversation and is not tied to the AI platform that created it.
+
+Connections use the Model Context Protocol (MCP); available operations depend on the client, subscription, configuration and permissions. Atlas does not include or combine third-party model subscriptions.
+
+[Learn how to co-create with AI]({{ site.baseurl }}{% link docs/articles/index.md %}).
+
 [See what changed in Atlas]({{ site.baseurl }}{% link docs/changelog.md %}).

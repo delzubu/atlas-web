@@ -1,7 +1,7 @@
 ---
 title: "Make Atlas your own: templates, playbooks and the library"
 parent: Articles
-nav_order: 3
+nav_order: 9
 description: "Reuse successful ways of working with AI, create project templates and customise shared playbooks in the Atlas library."
 ---
 
@@ -11,7 +11,9 @@ After working with an AI agent on a few projects, you may notice that you keep e
 
 You should not have to repeat these instructions every time. Atlas lets you retain a successful way of working as a project template, a playbook, or both. The library is where these reusable resources live.
 
-This article builds on [Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}), where we developed a local-history exhibition from source documents through research and modelling to a public presentation.
+This article builds on [Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}), where we developed a local-history exhibition from source documents through research and modelling to a public presentation.
+
+The library also makes working methods portable across compatible AI clients. A playbook lives in Atlas rather than only in one provider's custom instructions or conversation. You can use it with different connected agents without maintaining separate copies for every subscription. Models may interpret the same procedure differently, so test important playbooks with the clients you intend to use.
 
 ## Three things worth keeping separate
 

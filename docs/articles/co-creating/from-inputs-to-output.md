@@ -1,13 +1,12 @@
 ---
 title: "From raw material to finished work"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 6
+parent: Articles
+nav_order: 7
 ---
 
 # From raw material to finished work
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 6 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 6 of 6
 
 Suppose you have been asked to prepare a small exhibition on how a town's market square changed over time. You receive a few documents and a broad brief. You do not yet know the final story, and the available evidence may contradict your initial expectations.
 
@@ -16,6 +15,8 @@ This is a good example of co-creation: the work evolves as you understand the pr
 The town and example evidence below are fictional. Replace them with your own sources when following the workflow.
 
 ![From inputs through research and modelling to reviewed output]({{ site.baseurl }}{% link assets/images/articles/research-to-output.svg %})
+
+You do not need to use one agent for the whole process. For example, use the agent you prefer for interpreting sources, another for checking the knowledge model, and a third for preparing the presentation. Each receives the relevant project context and works with the same persistent artifacts. The choice of model or subscription can change as the work develops; the project's purpose and history remain in Atlas. Delegate bounded work autonomously where useful, and intervene at the points where your expertise changes the outcome.
 
 ## 1. Capture the inputs and the goal
 
@@ -122,4 +123,4 @@ Explore the [app guides]({{ site.baseurl }}{% link docs/apps/index.md %}) for th
 
 ---
 
-[Previous: Going beyond documents]({{ site.baseurl }}{% link docs/articles/co-creating/beyond-documents.md %}) · [Return to the series]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %})
+[Previous: Going beyond documents]({{ site.baseurl }}{% link docs/articles/co-creating/beyond-documents.md %}) · [Return to the series]({{ site.baseurl }}{% link docs/articles/index.md %})

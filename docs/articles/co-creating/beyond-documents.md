@@ -1,17 +1,18 @@
 ---
 title: "Going beyond documents"
-parent: Co-creating with AI
-grand_parent: Articles
-nav_order: 5
+parent: Articles
+nav_order: 6
 ---
 
 # Going beyond documents
 
-[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/co-creating/index.md %}) · Part 5 of 6
+[Co-creating with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) · Part 5 of 6
 
 A well-organised document is an excellent starting point. But a narrative is not always the best way to explore dates, relationships, tasks or a presentation for an audience. Atlas lets you keep those representations alongside the source material and working notes rather than forcing everything into one long text.
 
 The aim is not to add visual polish for its own sake. Choose a representation that helps you understand or communicate something more effectively.
+
+Atlas provides task-appropriate instruments for bespoke work. The resulting artifacts are kept in the shared workspace, so you can use one compatible agent to design a presentation, another to review its claims and your own judgement to refine the result. The model or presentation is not bound to the service that created it.
 
 ## Give the audience a slideshow
 

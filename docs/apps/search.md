@@ -25,6 +25,12 @@ For a database without Atlas Search datasets, select the **default** index to wo
 
 Each temporary connection is private to its owner for querying and expires after a day without use. Keep up to five at a time. Use **Edit** to reconnect at a new address or **Disconnect** to remove the connection immediately. Agents can manage their owner’s connections and run native queries through Search MCP v2.
 
+## When Search earns its place
+
+For a large collection of long documents, ask a connected agent to search a named index for a specific question, return relevant passages and original source references, and identify conflicting evidence or missing coverage. Inspect the sources before accepting a conclusion.
+
+Search requires configured database and inference resources for semantic retrieval. It is not required for ordinary Workspace or KB editing. [KB versus Search]({{ site.baseurl }}{% link docs/articles/kb-versus-search.md %}) explains the decision; [Your data and agent access]({{ site.baseurl }}{% link docs/getting-started/data-and-access.md %}) explains operating requirements.
+
 ## Playbooks supporting work
 
 [Query your own graph database]({{ site.baseurl }}{% link docs/playbooks/core.md %}#query-your-graph) helps an agent inspect a Neo4j schema and answer a question using evidence from the graph.

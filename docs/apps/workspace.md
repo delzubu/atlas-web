@@ -125,6 +125,12 @@ ws-tool --project quarterly-review --ref main migrate-layout
 
 The maps, plans and models appear in the project home as before; their folders are in the system folders, hidden unless **Show system files** is on. Anyone with a local checkout should `ws-tool git pull`.
 
+## Try it with an agent
+
+Start with a small shared document, ask an agent to draft it and review the result through comments. Then ask the agent to address the comments and inspect the revisions. [Your first shared project]({{ site.baseurl }}{% link docs/getting-started/first-project.md %}) provides a reproducible exercise with sample files.
+
+A compatible external agent can work on the same saved artifacts as a configured Atlas Assistant. Use project instructions and handoffs when switching clients. See [Continuing work across conversations and agents]({{ site.baseurl }}{% link docs/articles/co-creating/continuing-work.md %}).
+
 ## Playbooks supporting work
 
 [Browse the playbooks]({{ site.baseurl }}{% link docs/playbooks/index.md %}) for a workflow, or start the workspace from a [project template]({{ site.baseurl }}{% link docs/playbooks/templates.md %}). A template can include starter files and a setup playbook.

@@ -24,6 +24,14 @@ A full clock turns red and adds a worklist item.
 
 After advancing the date, run the turn to see which clocks the time that passed suggests moving. Edit the numbers or untick rows; nothing moves until you apply.
 
+## See a character in context
+
+![NPC character sheet reference screenshot]({{ site.baseurl }}{% link docs/developers/design/screenshots/npc-sheet-1920.png %})
+
+*Reference screenshot from the design system.*
+
+Ask a connected agent to draft a character based on your setting and campaign constraints. Inspect the character sheet, review its relationships and refine anything that conflicts with established canon. Retain the source material and campaign decisions in the shared project.
+
 ## Playbooks supporting work
 
 The [campaign character playbooks]({{ site.baseurl }}{% link docs/playbooks/hobby.md %}#campaign-characters) cover creating and developing characters and groups, speaking in character, recording sessions and running faction turns.

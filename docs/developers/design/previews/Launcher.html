@@ -1,0 +1,176 @@
+<!doctype html>
+<!-- @dsCard height=900 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Launcher</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. Spec: ../components/Launcher.md -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  body { background: var(--bg); font-size: var(--text-ui); }
+  .header { height: 56px; border-bottom: 1px solid var(--border); }
+  .header-in { width: min(1120px, calc(100% - 32px)); height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .header svg { height: 40px; width: auto; display: block; margin-left: -8px; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--surface-2); border: 0; font-weight: 600; }
+  main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: var(--space-5) 0; }
+  .date { margin: 0; font-size: var(--text-title); line-height: 26px; font-weight: 600; }
+  .underline { display: block; width: 56px; height: 8px; margin: 6px 0 var(--space-5); }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-5); align-items: start; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 var(--space-2); }
+  .eyebrow { margin: 0; color: var(--brand); font-size: var(--text-meta); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .head .meta { color: var(--muted); font-size: var(--text-meta); margin-right: auto; margin-left: var(--space-3); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); }
+  .tile { display: block; height: 72px; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-lg); color: var(--fg); }
+  .tile:hover { background: var(--hover); text-decoration: none; }
+  .num { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 28px; }
+  .tile small { display: block; color: var(--muted); font-size: var(--text-meta); }
+  .danger { color: var(--danger); }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--warning-border); margin-right: 6px; vertical-align: 2px; }
+  .rows { list-style: none; margin: var(--space-2) 0 0; padding: 0; }
+  .row { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto 48px 80px; align-items: center; gap: var(--space-2); height: var(--row-default); padding: 0 var(--space-2); border-radius: var(--radius-sm); }
+  .row:hover { background: var(--hover); }
+  .row .where, .muted { color: var(--muted); font-size: var(--text-meta); }
+  .row .due { text-align: right; font-size: var(--text-meta); }
+  .more { display: inline-block; margin: var(--space-1) var(--space-2) 0; font-size: var(--text-meta); }
+  section + section { margin-top: var(--space-5); }
+  .grid > section + section { margin-top: 0; }
+  .projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+  .projects li { display: grid; grid-template-columns: 140px 20px minmax(0, 1fr) auto; align-items: center; gap: var(--space-2); height: 40px; padding: 0 var(--space-2); border-bottom: 1px solid var(--border); }
+  .projects strong { font-weight: 600; }
+  .star { color: var(--fg); }
+  .badges { display: flex; gap: var(--space-3); font-size: var(--text-meta); }
+  .changed::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 6px; vertical-align: 2px; }
+  .tools { list-style: none; margin: 0; padding: 0; }
+  .tools a { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: var(--space-2); height: 36px; padding: 0 var(--space-2); border-radius: var(--radius-sm); color: var(--fg); }
+  .tools a:hover { background: var(--hover); text-decoration: none; }
+  .glyph { display: grid; place-items: center; width: 28px; height: 28px; border-radius: var(--radius-md); background: var(--surface-2); font-size: 16px; }
+  .chev { color: var(--muted); }
+  .badge { padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); font-size: var(--text-caption); font-weight: 700; }
+  .skel { display: inline-block; width: 24px; height: 20px; border-radius: var(--radius-sm); background: var(--surface-2); vertical-align: middle; }
+  .note { margin-top: 48px; padding-top: var(--space-3); border-top: 1px dashed var(--border); color: var(--muted); font-size: var(--text-meta); }
+  /* First run */
+  .switch { position: fixed; right: 12px; bottom: 12px; display: flex; gap: 4px; padding: 4px; background: var(--chrome-ink); border-radius: var(--radius-md); box-shadow: var(--shadow-float); font-size: var(--text-meta); }
+  .switch a { padding: 4px 8px; color: var(--on-chrome); border-radius: var(--radius-sm); }
+  .switch a[aria-current] { background: var(--chrome-hover); }
+  .card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 0 var(--space-4); }
+  .step { display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); padding: var(--space-4) 0; }
+  .step + .step { border-top: 1px solid var(--border); }
+  .disc { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--surface-2); font-weight: 600; }
+  .step h3 { margin: 2px 0 2px; font-size: var(--text-ui); font-weight: 600; }
+  .step p { margin: 0 0 var(--space-3); color: var(--muted); }
+  .step.locked h3, .step.locked p { color: var(--muted); }
+  .actions { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .primary { height: 32px; padding: 0 var(--space-3); border: 1px solid var(--accent); border-radius: var(--radius-md); background: var(--accent); color: var(--on-accent); }
+  .button { height: 32px; padding: 0 var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); }
+  select { height: 32px; min-width: 200px; padding: 0 var(--space-2); border: 1px solid var(--border); border-radius: var(--radius-md); font: inherit; }
+  button:disabled, select:disabled { opacity: .5; cursor: not-allowed; }
+  .tools.guided a { grid-template-columns: 28px 1fr auto; grid-template-rows: auto auto; height: auto; min-height: 52px; padding: var(--space-2); align-items: start; }
+  .tools.guided .glyph { grid-row: span 2; }
+  .tools.guided .desc { grid-column: 2; color: var(--muted); font-size: var(--text-meta); }
+  .tools.guided .new { grid-column: 2; color: var(--accent); font-size: var(--text-meta); margin-top: 2px; }
+  .tools.guided .chev { grid-column: 3; grid-row: 1; }
+  @media (max-width: 1199px) { .grid { grid-template-columns: 1fr; } .tools { display: grid; grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 559px) { .switch { position: static; margin: 0 16px 16px; width: max-content; } .tiles { grid-template-columns: 1fr 1fr; } .row { grid-template-columns: 20px minmax(0, 1fr) 80px; } .row .where, .row .pct { display: none; } .projects li { grid-template-columns: minmax(0, 1fr) 20px; } .projects li > :nth-child(n+3) { display: none; } }
+</style>
+</head>
+<body>
+<header class="header"><div class="header-in">
+  <!-- docs/design/assets/atlas-logo-aubergine-coral.svg, inlined -->
+  <svg viewBox="0 0 1100 290" role="img" aria-label="Atlas The Light Factory"><defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7C3AED"/><stop offset=".55" stop-color="#5B21B6"/><stop offset="1" stop-color="#32134F"/></linearGradient></defs><g transform="translate(30 12) scale(.53)"><path d="M63 373 218 92 Q238 65 256 65 Q274 65 294 92 L449 373 344 335 256 178 168 335Z" fill="url(#a)"/><path d="M68 417 Q256 326 444 417 Q256 370 68 417Z" fill="#F97366"/></g><text x="320" y="157" font-family="Arial,Helvetica,sans-serif" font-size="105" font-weight="700" letter-spacing="12" fill="#1F2328">ATLAS</text><text x="325" y="211" font-family="Arial,Helvetica,sans-serif" font-size="29" letter-spacing="8" fill="#5B21B6">THE LIGHT FACTORY</text></svg>
+  <button class="avatar" type="button" aria-label="Account: pat@example.com">PM</button>
+</div></header>
+<main>
+  <p class="date">Thursday 30 October</p>
+  <!-- The logo's curved underline, the screen's only coral. -->
+  <svg class="underline" viewBox="68 340 376 77" preserveAspectRatio="none" aria-hidden="true"><path d="M68 417 Q256 326 444 417 Q256 370 68 417Z" fill="var(--brand-highlight)"/></svg>
+  <div class="grid">
+    <div>
+      <section aria-labelledby="today">
+        <div class="head"><h2 class="eyebrow" id="today">Today</h2><span class="meta">as of 10:12</span><a href="#work">Open My work →</a></div>
+        <div class="tiles">
+          <a class="tile" href="#work?show=overdue"><div class="num danger">⚠ 3</div><small>Overdue</small></a>
+          <a class="tile" href="#work?show=today"><div class="num"><span class="dot"></span>5</div><small>Due today</small></a>
+          <a class="tile" href="#work?show=underway"><div class="num">◐ 4</div><small>Underway</small></a>
+          <a class="tile" href="#"><div class="num">✎ 2</div><small>To answer</small></a>
+        </div>
+        <ul class="rows">
+          <li class="row"><span>○</span><span>Call the bank</span><span class="where">home › My TODOs</span><span class="pct"></span><span class="due danger">⚠ 20 Oct</span></li>
+          <li class="row"><span>◐</span><span>API review</span><span class="where">q4-launch › Plan</span><span class="pct muted">40%</span><span class="due"><span class="dot"></span>Today</span></li>
+          <li class="row"><span>↻</span><span>Weekly report</span><span class="where">home › My TODOs</span><span class="pct"></span><span class="due"><span class="dot"></span>Today</span></li>
+        </ul>
+        <a class="more" href="#work">7 more in My work →</a>
+      </section>
+      <section aria-labelledby="continue">
+        <div class="head"><h2 class="eyebrow" id="continue">Continue</h2><span class="meta"></span><a href="#projects">All projects 18 →</a></div>
+        <ul class="projects">
+          <li><strong>home</strong><span class="star">★</span><span class="muted">You · 2 h ago</span><span class="badges"><span class="changed">Changed</span><span>2 ✎</span></span></li>
+          <li><strong>garden-plans</strong><span class="star">☆</span><span class="muted">Claude for you · yesterday</span><span class="badges"></span></li>
+          <li><strong>q4-launch</strong><span class="star">★</span><span class="muted">Sam · 3 days ago</span><span class="badges"><span class="changed">Changed</span></span></li>
+          <li><strong>site-x</strong><span class="star">☆</span><span class="muted"><span class="skel" style="width:120px;height:12px"></span></span><span class="badges"></span></li>
+        </ul>
+      </section>
+    </div>
+    <section aria-labelledby="tools">
+      <div class="head"><h2 class="eyebrow" id="tools">Tools</h2></div>
+      <ul class="tools">
+        <li><a href="#" title="Plans, schedules and Gantt charts"><span class="glyph">▦</span>Planner<span class="chev">›</span></a></li>
+        <li><a href="#" title="Models"><span class="glyph">⟲</span>Model<span class="chev">›</span></a></li>
+        <li><a href="#" title="Diagrams"><span class="glyph">◫</span>Diagram<span class="chev">›</span></a></li>
+        <li><a href="#" title="Learning paths and tests"><span class="glyph">✎</span>Study<span class="chev">›</span></a></li>
+        <li><a href="#" title="Sketches"><span class="glyph">◇</span>Sketch<span class="chev">›</span></a></li>
+        <li><a href="#" title="Files, history and comments"><span class="glyph">▤</span>Workspace<span class="chev">›</span></a></li>
+        <li><a href="#" title="Search the knowledge base"><span class="glyph">⌕</span>Search<span class="chev">›</span></a></li>
+        <li><a href="#" title="Knowledge base explorer"><span class="glyph">◷</span>Knowledge base<span class="chev">›</span></a></li>
+        <li><a href="#" title="World map"><span class="glyph">⌖</span>Map<span class="badge">Not configured</span></a></li>
+      </ul>
+    </section>
+  </div>
+  <p class="note">Preview with sample data. The "site-x" row shows a loading skeleton. Spec: docs/design/components/Launcher.md.</p>
+</main>
+<main id="first-run" hidden>
+  <p class="date">Welcome to Atlas</p>
+  <svg class="underline" viewBox="68 340 376 77" preserveAspectRatio="none" aria-hidden="true"><path d="M68 417 Q256 326 444 417 Q256 370 68 417Z" fill="var(--brand-highlight)"/></svg>
+  <div class="grid">
+    <section aria-labelledby="start">
+      <div class="head"><h2 class="eyebrow" id="start">Get started</h2><span class="meta"></span><a href="#">Hide</a></div>
+      <div class="card">
+        <div class="step"><span class="disc">1</span><div><h3>Create your first project</h3><p>A project is a workspace: your files, plans, maps and models live in it.</p>
+          <div class="actions"><button class="primary" type="button">New project from template…</button><a href="#">Open a shared project</a></div></div></div>
+        <div class="step locked"><span class="disc">2</span><div><h3>Choose where your own TODOs live</h3><p>Your personal project holds the TODOs that belong to no project.</p>
+          <div class="actions"><select disabled title="Create or open a project first"><option>Select a project</option></select><button class="button" type="button" disabled title="Create or open a project first">Use as personal project</button></div></div></div>
+        <div class="step locked"><span class="disc">3</span><div><h3>Pin the projects you work in</h3><p>Their work shows here and in My work.</p>
+          <div class="actions"><a href="#projects">All projects →</a></div></div></div>
+      </div>
+    </section>
+    <section aria-labelledby="tools2">
+      <div class="head"><h2 class="eyebrow" id="tools2">Tools</h2></div>
+      <ul class="tools guided">
+        <li><a href="#"><span class="glyph">▦</span><span>Planner</span><span class="chev">›</span><span class="desc">Plans, schedules and Gantt charts</span><span class="new">New plan</span></a></li>
+        <li><a href="#"><span class="glyph">⟲</span><span>Model</span><span class="chev">›</span><span class="desc">Models</span><span class="new">New model</span></a></li>
+        <li><a href="#"><span class="glyph">◫</span><span>Diagram</span><span class="chev">›</span><span class="desc">Diagrams</span><span class="new">New diagram</span></a></li>
+        <li><a href="#"><span class="glyph">◇</span><span>Sketch</span><span class="chev">›</span><span class="desc">Sketches</span><span class="new">New sketch</span></a></li>
+        <li><a href="#"><span class="glyph">✎</span><span>Study</span><span class="chev">›</span><span class="desc">Agents build study corpora with the Study tools.</span></a></li>
+        <li><a href="#"><span class="glyph">▤</span><span>Workspace</span><span class="chev">›</span><span class="desc">Files, history and comments</span><span class="new">New project…</span></a></li>
+        <li><a href="#"><span class="glyph">⌕</span><span>Search</span><span class="chev">›</span><span class="desc">Search the knowledge base</span></a></li>
+        <li><a href="#"><span class="glyph">◷</span><span>Knowledge base</span><span class="chev">›</span><span class="desc">Browse and edit a knowledge base</span></a></li>
+        <li><a href="#"><span class="glyph">⌖</span><span>Map</span><span class="badge">Not configured</span><span class="desc">World map</span></a></li>
+      </ul>
+    </section>
+  </div>
+  <p class="note">First run: no recent, pinned or personal project. Without a project, a New action opens step 1. Spec: docs/design/components/Launcher.md, "First run".</p>
+</main>
+<nav class="switch" aria-label="Preview state"><a href="#normal" data-state="normal">Normal</a><a href="#first-run" data-state="first-run">First run</a></nav>
+<script>
+  function show() {
+    const first = location.hash === '#first-run';
+    document.querySelector('main:not(#first-run)').hidden = first;
+    document.getElementById('first-run').hidden = !first;
+    document.querySelectorAll('.switch a').forEach(a => a.toggleAttribute('aria-current', (a.dataset.state === 'first-run') === first));
+  }
+  addEventListener('hashchange', show); show();
+</script>
+</body>
+</html>

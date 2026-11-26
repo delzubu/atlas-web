@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- @dsCard group="Layout" height=360 width=960 subtitle="kb-explorer at 1920×950 (1080p laptop), today vs proposed, scaled" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Shell</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. -->
+<link rel="stylesheet" href="../tokens.css">
+</head>
+<body>
+<div class="demo">
+  <style>
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+    .demo{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:16px}
+    .cap{font-size:12px;font-weight:600;margin-bottom:6px}
+    .cap span{font-weight:400;color:var(--muted)}
+    /* scale: 1920x950 -> 432x214 (factor 0.225) */
+    .scr{position:relative;width:432px;height:214px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+    .r{position:absolute;box-sizing:border-box}
+    .chrome{background:var(--surface-2);border:1px solid var(--border)}
+    .waste{background:repeating-linear-gradient(135deg,var(--warning-bg) 0 4px,transparent 4px 8px);border:1px dashed var(--warning-border)}
+    .line{height:2px;border-radius:1px;background:var(--border);margin:3px 0}
+    .row{height:3px;border-radius:1px;background:var(--border);margin:2px 4px}
+    .row.sel{background:var(--selected)}
+    .ttl{height:5px;border-radius:1px;background:var(--fg)}
+    .lab{position:absolute;font-size:9px;line-height:11px;color:var(--fg);background:var(--surface);padding:0 3px;border-radius:2px;white-space:nowrap}
+    ul{margin:8px 0 0;padding-left:16px;font-size:12px;line-height:17px}
+    li{margin:2px 0}
+    b{font-weight:600}
+  </style>
+  <div>
+    <div class="cap">Today <span>measured, kb-1920.png</span></div>
+    <div class="scr">
+      <div class="r waste" style="left:0;top:0;width:58px;height:50px"></div>
+      <div class="r chrome" style="left:3px;top:3px;width:52px;height:9px;border-radius:3px"></div>
+      <div class="r chrome" style="left:3px;top:14px;width:21px;height:7px;border-radius:3px"></div>
+      <div class="r" style="left:0;top:50px;width:58px;bottom:0;border-right:1px solid var(--border)">
+        <div class="row"></div><div class="row" style="height:6px"></div><div class="row"></div><div class="row sel" style="height:6px"></div><div class="row" style="height:6px"></div><div class="row"></div><div class="row" style="height:6px"></div><div class="row"></div><div class="row" style="height:6px"></div><div class="row"></div><div class="row" style="height:6px"></div><div class="row" style="height:6px"></div><div class="row"></div><div class="row"></div><div class="row" style="height:6px"></div><div class="row" style="height:6px"></div><div class="row"></div>
+      </div>
+      <div class="r waste" style="left:58px;top:0;right:0;height:14px"></div>
+      <div class="r chrome" style="left:58px;top:14px;right:0;height:10px"></div>
+      <div class="r" style="left:69px;top:27px;width:92px"><div class="ttl" style="width:92px"></div><div class="line" style="width:22px;margin-top:4px"></div><div class="line" style="width:95px"></div><div class="line" style="width:18px"></div></div>
+      <div class="r" style="left:69px;top:59px;width:158px;bottom:0"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line" style="width:40%"></div><div class="line" style="margin-top:8px;width:30%;height:4px;background:var(--fg);opacity:.6"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line" style="width:70%"></div></div>
+      <div class="r waste" style="left:229px;top:27px;width:120px;bottom:0;opacity:.6"></div>
+      <div class="r chrome" style="left:350px;top:27px;width:72px;height:29px;border-radius:3px;background:var(--surface)"></div>
+      <div class="r chrome" style="left:350px;top:62px;width:72px;height:11px;border-radius:3px;background:var(--surface)"></div>
+      <div class="r chrome" style="left:350px;top:79px;width:72px;height:22px;border-radius:3px;background:var(--surface)"></div>
+      <div class="r chrome" style="right:4px;bottom:4px;width:39px;height:10px;border-radius:3px;box-shadow:var(--shadow-float)"></div>
+      <span class="lab" style="left:62px;top:2px">64px reserved, empty</span>
+      <span class="lab" style="left:238px;top:120px;background:transparent">≈540px gap</span>
+      <span class="lab" style="left:100px;top:198px">text starts y≈263</span>
+    </div>
+    <ul>
+      <li>Navigator's first row at y=221; 260px width wraps titles</li>
+      <li>Toolbar + H1 + chips stack before the text</li>
+      <li>Relations sit ≈540px of white away from the text</li>
+      <li>Dock floats over content</li>
+    </ul>
+  </div>
+  <div>
+    <div class="cap">Proposed <span>same viewport</span></div>
+    <div class="scr">
+      <div class="r chrome" style="left:0;top:0;right:0;height:8px;border-width:0 0 1px"></div>
+      <div class="r" style="left:3px;top:2px;width:4px;height:4px;border-radius:1px;background:var(--accent)"></div>
+      <div class="r" style="left:170px;top:1px;width:80px;height:6px;border:1px solid var(--border);border-radius:2px;background:var(--surface)"></div>
+      <div class="r" style="left:0;top:8px;width:72px;bottom:0;border-right:1px solid var(--border)">
+        <div class="row" style="background:var(--surface-2);border:1px solid var(--border);height:5px;margin-top:3px"></div>
+        <div class="row"></div><div class="row"></div><div class="row"></div><div class="row sel"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div>
+      </div>
+      <div class="r chrome" style="left:72px;top:8px;width:279px;height:9px;border-width:0 0 1px"><div class="ttl" style="position:absolute;left:115px;top:2px;width:70px;height:4px"></div></div>
+      <div class="r" style="left:185px;top:22px;width:162px;bottom:0"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line" style="width:40%"></div><div class="line" style="margin-top:8px;width:30%;height:4px;background:var(--fg);opacity:.6"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line" style="width:50%"></div></div>
+      <div class="r" style="left:351px;top:8px;width:81px;bottom:0;border-left:1px solid var(--border)">
+        <div style="height:7px;background:var(--surface-2);border-bottom:1px solid var(--border);position:relative"><div style="position:absolute;left:4px;bottom:0;width:18px;height:2px;background:var(--accent)"></div></div>
+        <div class="row" style="width:40px"></div><div class="row"></div><div class="row" style="width:40px;margin-top:5px"></div><div class="row"></div><div class="row"></div>
+      </div>
+      <span class="lab" style="left:80px;top:100px;background:transparent;color:var(--muted)">margin</span>
+      <span class="lab" style="left:190px;top:198px">text starts y≈100</span>
+    </div>
+    <ul>
+      <li>36px <b>AppBar</b> + 40px <b>DocHeader</b>: ≈160px vertical returned</li>
+      <li>320px <b>Navigator</b>, one-line rows: ≈36 visible vs ≈27</li>
+      <li><b>Inspector</b> open by default, directly beside the 720px text</li>
+      <li>Free width becomes margin, not line length</li>
+    </ul>
+  </div>
+  <script></script>
+</div>
+</body>
+</html>

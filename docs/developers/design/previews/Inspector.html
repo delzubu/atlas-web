@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- @dsCard group="Document" height=380 subtitle="Tabbed right drawer; kb Related tab shown" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Inspector</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. -->
+<link rel="stylesheet" href="../tokens.css">
+</head>
+<body>
+<div class="demo">
+  <style>
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+    .demo{padding:16px}
+    .insp{width:320px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;font-size:13px;line-height:18px}
+    .tabs{display:flex;align-items:stretch;height:32px;background:var(--surface-2);border-bottom:1px solid var(--border);padding:0 4px}
+    .tab{border:0;background:transparent;padding:0 10px;font-weight:600;color:var(--muted);box-shadow:inset 0 -2px 0 transparent;font-size:13px}
+    .tab[aria-selected=true]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--accent)}
+    .tab small{font-weight:400;font-size:11px;margin-left:4px;color:var(--muted)}
+    .x{margin-left:auto;border:0;background:transparent;color:var(--muted);width:28px}
+    .body{padding:10px 12px;display:grid;gap:12px}
+    h4{margin:0 0 4px;font-size:12px;font-weight:600;color:var(--muted)}
+    .rel{display:flex;align-items:center;gap:6px;height:26px;padding:0 6px;border-radius:var(--radius-sm)}
+    .rel:hover{background:var(--hover)}
+    .rel a{color:var(--accent);text-decoration:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rel .t{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .rel .act{border:0;background:transparent;color:var(--muted);visibility:hidden}
+    .rel:hover .act{visibility:visible}
+    .add{border:1px dashed var(--border);background:transparent;color:var(--muted);border-radius:var(--radius-md);height:26px;font-size:12px;width:100%;text-align:left;padding:0 8px}
+  </style>
+  <aside class="insp" aria-label="Inspector">
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true">Related<small>5</small></button>
+      <button class="tab" role="tab">Sources<small>2</small></button>
+      <button class="tab" role="tab">File</button>
+      <button class="x" aria-label="Close Inspector  ]">×</button>
+    </div>
+    <div class="body" role="tabpanel">
+      <section><h4>Caused by</h4>
+        <div class="rel"><span class="t">−690</span><a href="#">Westmarch signs a treaty</a><button class="act" aria-label="Retarget">⇄</button><button class="act" aria-label="Remove">×</button></div>
+      </section>
+      <section><h4>Hindered by</h4>
+        <div class="rel"><span class="t">−702</span><a href="#">Older feuds</a><button class="act">⇄</button><button class="act">×</button></div>
+      </section>
+      <section><h4>After</h4>
+        <div class="rel"><span class="t">−686</span><a href="#">Highpass loses the northern march</a><button class="act">⇄</button><button class="act">×</button></div>
+        <div class="rel"><span class="t">−665</span><a href="#">Lowtown raises defensive walls</a><button class="act">⇄</button><button class="act">×</button></div>
+      </section>
+      <button class="add">＋ Add relation…</button>
+    </div>
+  </aside>
+  <script>
+    document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(o=>o.setAttribute('aria-selected',o===t))}));
+  </script>
+</div>
+</body>
+</html>

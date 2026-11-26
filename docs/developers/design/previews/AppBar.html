@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- @dsCard group="Layout" height=120 subtitle="40px ink frame: switcher, breadcrumb, ⌘K, status, account (phone variant below)" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · AppBar</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. -->
+<link rel="stylesheet" href="../tokens.css">
+</head>
+<body>
+<div class="wrap">
+  <style>
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+    .wrap{padding:16px;display:grid;gap:12px}
+    .bar{display:flex;align-items:center;gap:8px;height:var(--appbar-h);padding:0 var(--space-3);background:var(--chrome-ink);color:var(--on-chrome);border-radius:var(--radius-lg);font-size:13px;line-height:18px}
+    .ib{display:grid;place-items:center;width:30px;height:30px;border:0;border-radius:var(--radius-md);background:transparent;color:var(--on-chrome-muted)}
+    .ib:hover{background:var(--chrome-hover);color:var(--on-chrome)}
+    .mark{display:grid;place-items:center;width:24px;height:24px;border-radius:var(--radius-md);background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:700}
+    .app{display:flex;align-items:center;gap:8px;border:0;background:transparent;color:inherit;padding:4px 6px;border-radius:var(--radius-md);font-weight:600;font-size:15px}
+    .app:hover{background:var(--chrome-hover)}
+    .crumb{color:var(--on-chrome-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+    .crumb b{color:var(--on-chrome);font-weight:400}
+    .search{flex:0 1 320px;display:flex;justify-content:space-between;align-items:center;height:28px;padding:0 8px;border:1px solid var(--chrome-line);border-radius:var(--radius-md);background:rgba(255,255,255,.06);color:var(--on-chrome-muted);font-size:12px}
+    kbd{font:11px/14px var(--font-sans);color:var(--on-chrome-muted)}
+    .sync{display:inline-flex;align-items:center;gap:6px;color:var(--on-chrome-muted);font-size:12px;white-space:nowrap}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--warning-border)}
+    .av{width:28px;height:28px;border-radius:50%;background:var(--selected);color:var(--fg);box-shadow:0 0 0 1.5px var(--on-chrome);display:grid;place-items:center;font-size:11px;font-weight:600}
+    .narrow{max-width:390px}
+    svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+  </style>
+  <div class="bar" role="banner">
+    <button class="ib" aria-label="Collapse navigator  ["><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M6 3v10"/></svg></button>
+    <button class="app"><span class="mark">A</span>KB Explorer<svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></button>
+    <span class="crumb">Timeline / 7th century / <b>Westmarch crowns a new king</b></span>
+    <button class="search">Search or run a command… <kbd>⌘K</kbd></button>
+    <span class="sync" role="status"><span class="dot"></span>2 unsaved changes</span>
+    <span class="av" aria-label="Account">BM</span>
+  </div>
+  <div class="bar narrow" role="banner" aria-label="Phone">
+    <button class="ib" aria-label="Open navigator"><svg viewBox="0 0 16 16"><path d="M2.5 4h11M2.5 8h11M2.5 12h11"/></svg></button>
+    <span class="mark">A</span>
+    <span class="crumb"><b>Westmarch crowns a new king</b></span>
+    <button class="ib" aria-label="Search ⌘K"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg></button>
+    <span class="av">BM</span>
+  </div>
+  <script></script>
+</div>
+</body>
+</html>

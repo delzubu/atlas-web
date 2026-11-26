@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- @dsCard group="Layout" height=620 subtitle="Agent: edge handle (hover shows Settings and Hide), floating window with run card, answer and changes" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Agent</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. The agent's own stylesheet is the real one. -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../../../packages/app-suite/src/assistant/assistant.css">
+</head>
+<body>
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-size:13px;line-height:18px}
+  .frame{position:relative;height:100vh;min-height:600px;overflow:hidden;display:grid;grid-template-rows:var(--appbar-h) 1fr}
+  .bar{display:flex;align-items:center;gap:8px;padding:0 var(--space-3);background:var(--chrome-ink);color:var(--on-chrome)}
+  .mark{display:grid;place-items:center;width:24px;height:24px;border-radius:var(--radius-md);background:var(--accent);color:var(--on-accent);font-weight:700}
+  .doc{padding:var(--space-5);background:var(--surface-2)}
+  .page{max-width:var(--measure);margin:0 auto;padding:var(--space-5);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);font-size:15px;line-height:24px}
+  .page h1{font-size:20px;line-height:26px;margin:0 0 var(--space-3)}
+  .note{position:absolute;left:var(--space-4);bottom:var(--space-3);color:var(--muted);font-size:12px}
+  /* the preview shows the window in place instead of fixed to the viewport */
+  .atlas-agent-window{position:absolute}
+</style>
+<div class="frame">
+  <div class="bar"><span class="mark">A</span><b>Workspace</b><span style="color:var(--on-chrome-muted)">gntl-smartsearch-clm › materials › icertis-additional-source-evaluation.md</span></div>
+  <div class="doc"><div class="page"><h1>Icertis additional source evaluation</h1><p>The document stays the focus. The agent is a small tab on the edge, and a window you can move, resize or close.</p><p>Changes the agent makes appear here as they are written.</p></div></div>
+
+  <!-- the window, with a running turn and a finished one -->
+  <section class="atlas-agent-window" data-mode="floating" role="dialog" aria-modal="false" aria-label="Agent" style="right:56px;top:56px;left:auto;width:420px;height:600px">
+    <header class="atlas-agent-bar">
+      <span class="atlas-agent-grip-dots" aria-hidden="true">⠿</span>
+      <h2 class="atlas-agent-title">Summarize where we are with this project</h2>
+      <button type="button" aria-label="Threads" title="Threads"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg></button>
+      <button type="button" aria-label="New thread" title="New thread"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button>
+      <button type="button" aria-label="Agent settings" title="Agent settings"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/></svg></button>
+      <button type="button" aria-label="Close agent" title="Close agent  Esc"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </header>
+    <div class="atlas-agent-body">
+      <div class="atlas-agent-thread">
+        <section class="atlas-agent-turn">
+          <div class="atlas-agent-you"><p>What changed in the evaluation since Monday?</p><time>14:02</time></div>
+          <div class="atlas-agent-reply atlas-agent-done">
+            <div class="atlas-agent-answer"><p><strong>Two files changed.</strong> The <a class="atlas-agent-ref" href="#" title="atlas://workspace/p/main/a.md">icertis-additional-source-evaluation.md</a> now rates connector reuse at 80%, and <a class="atlas-agent-ref" href="#">HANDOFF.md</a> lists the open items.</p><ul><li>Connector reuse: 80%</li><li>Copilot channel: 85%</li></ul></div>
+            <div class="atlas-agent-changes"><h3>2 changes</h3><ul><li><span class="atlas-agent-mark">~</span><a class="atlas-agent-ref" href="#">icertis-additional-source-evaluation.md</a></li><li><span class="atlas-agent-mark">~</span><a class="atlas-agent-ref" href="#">HANDOFF.md</a></li></ul><button type="button">Undo these changes</button></div>
+            <small class="atlas-agent-took">Finished in 3:05</small>
+          </div>
+        </section>
+        <section class="atlas-agent-turn">
+          <div class="atlas-agent-you"><p>Summarize where we are with this project.</p><time>14:09</time></div>
+          <div class="atlas-agent-reply">
+            <div class="atlas-agent-run" data-phase="tools">
+              <div class="atlas-agent-run-head"><span class="atlas-agent-pulse"></span><strong role="status">Using Workspace tools</strong><span class="atlas-agent-clock">2:41</span><button type="button" class="atlas-agent-stop">Stop</button></div>
+              <ol class="atlas-agent-steps"><li data-state="done">Sent</li><li data-state="done">Thinking</li><li data-state="now">Using tools</li><li data-state="todo">Answer</li></ol>
+              <p class="atlas-agent-hint">Your last runs took 3–9 min. You can keep working.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <form class="atlas-agent-compose">
+      <p class="atlas-agent-why">The agent is working. You can keep using Atlas, or stop it.</p>
+      <div class="atlas-agent-input" data-disabled><textarea rows="1" disabled aria-label="Message to the agent"></textarea><button type="submit" class="atlas-primary" disabled aria-label="Send">↵</button></div>
+    </form>
+  </section>
+
+  <!-- the handle, hovered: Settings and Hide beside it -->
+  <div class="atlas-agent-handle" data-side="right" data-status="working" style="top:90%;">
+    <div class="atlas-agent-peek" style="opacity:1">
+      <button type="button" aria-label="Agent settings"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/></svg></button>
+      <button type="button" aria-label="Hide this button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </div>
+    <button type="button" class="atlas-agent-tab" aria-label="Agent is working · 2:41  Ctrl+."><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.6 4.9 4.9 1.6-4.9 1.6L8 14.5l-1.6-4.9L1.5 8l4.9-1.6z"/></svg><span class="atlas-agent-badge" aria-hidden="true"></span></button>
+  </div>
+  <p class="note">Handle shown hovered, with the window open for illustration. In use the handle is hidden while the window is open.</p>
+</div>
+<script>document.querySelector(".atlas-agent-body").scrollTop = 1e5;</script>
+</body>
+</html>

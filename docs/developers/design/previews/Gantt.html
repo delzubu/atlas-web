@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- @dsCard group="Document" height=360 subtitle="Planner: bars on a two-tier axis, one row per navigator row" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Gantt</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. -->
+<link rel="stylesheet" href="../tokens.css">
+</head>
+<body>
+<div class="demo">
+  <style>
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+    .demo{padding:16px}
+    .chart{width:760px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;font-size:11px}
+    svg{display:block}
+    .axis{fill:var(--surface-2)} .tick{stroke:var(--border)} .t{fill:var(--fg);font-size:11px} .t.m{fill:var(--muted);font-size:10px}
+    .off{fill:var(--surface-2)} .grid{stroke:var(--border);stroke-opacity:.55}
+    .bar{fill:var(--fg);fill-opacity:.12;stroke:var(--fg)} .done{fill:var(--fg);fill-opacity:.8}
+    .crit{stroke:var(--danger);stroke-width:2.5} .manual{stroke-dasharray:4 2}
+    .sum{fill:var(--fg);fill-opacity:.85} .ms{fill:var(--fg);stroke:var(--surface)} .ham{fill:none;stroke:var(--fg);stroke-width:2.5;stroke-dasharray:5 3}
+    .fuzz{fill:var(--fg);fill-opacity:.14;stroke:var(--fg);stroke-opacity:.4;stroke-dasharray:2 2}
+    .base{fill:var(--muted)} .link{fill:none;stroke:var(--muted)} .today{stroke:var(--accent);stroke-width:1.5}
+    .lane{fill:var(--surface-2)} .lt{font-weight:600;fill:var(--fg);font-size:12px}
+    .sel{fill:var(--selected)}
+  </style>
+  <div class="chart">
+    <svg width="760" height="270" viewBox="0 0 760 270" role="img" aria-label="A Gantt chart with a summary, tasks, a milestone and a hammock">
+      <rect class="axis" width="760" height="44"/>
+      <g class="t"><text x="6" y="14">Oct 2026</text><text x="372" y="14">Nov 2026</text></g>
+      <g class="t m"><text x="6" y="40">12</text><text x="104" y="40">19</text><text x="202" y="40">26</text><text x="300" y="40">2</text><text x="398" y="40">9</text><text x="496" y="40">16</text><text x="594" y="40">23</text><text x="692" y="40">30</text></g>
+      <g><line class="tick" x1="370" x2="370" y1="0" y2="44"/></g>
+      <g transform="translate(0,44)">
+        <rect class="off" x="68" y="0" width="28" height="226"/><rect class="off" x="166" y="0" width="28" height="226"/><rect class="off" x="264" y="0" width="28" height="226"/><rect class="off" x="362" y="0" width="28" height="226"/><rect class="off" x="460" y="0" width="28" height="226"/><rect class="off" x="558" y="0" width="28" height="226"/><rect class="off" x="656" y="0" width="28" height="226"/>
+        <g><line class="grid" x1="98" x2="98" y1="0" y2="226"/><line class="grid" x1="196" x2="196" y1="0" y2="226"/><line class="grid" x1="294" x2="294" y1="0" y2="226"/><line class="grid" x1="392" x2="392" y1="0" y2="226"/><line class="grid" x1="490" x2="490" y1="0" y2="226"/><line class="grid" x1="588" x2="588" y1="0" y2="226"/><line class="grid" x1="686" x2="686" y1="0" y2="226"/></g>
+        <rect class="lane" x="0" y="0" width="760" height="24"/><text class="lt" x="8" y="16">Frontend</text>
+        <rect class="sel" x="0" y="48" width="760" height="24"/>
+        <path d="M14 46H300v8l-4 -4H18l-4 4z" class="sum" transform="translate(0,-2)"/><text x="306" y="42">Build</text>
+        <rect class="bar" x="14" y="53" width="120" height="14" rx="2"/><rect class="done" x="14" y="53" width="120" height="14" rx="2"/><text x="140" y="64">Wireframes</text>
+        <rect class="bar crit" x="140" y="77" width="150" height="14" rx="2" style="stroke:var(--accent);stroke-width:2"/><rect class="done" x="140" y="77" width="60" height="14" rx="2"/><text x="296" y="88">Build the UI (selected)</text>
+        <rect class="lane" x="0" y="96" width="760" height="24"/><text class="lt" x="8" y="112">Backend</text>
+        <rect class="fuzz" x="160" y="127" width="200" height="10"/>
+        <rect class="bar manual" x="180" y="125" width="150" height="14" rx="2"/><text x="336" y="136">Build the API · manual, uncertain</text>
+        <rect class="base" x="150" y="140" width="130" height="3"/>
+        <rect class="bar crit" x="330" y="149" width="140" height="14" rx="2"/><text x="476" y="160">Quality assurance · critical</text>
+        <path d="M472 187l7 7l-7 7l-7 -7z" class="ms"/><text x="486" y="198">Go-live</text>
+        <path d="M472 220V212H700V220" class="ham"/><text x="706" y="220">Hypercare</text>
+        <g class="link"><path d="M290 84H302V117H300"/><path d="M470 156H482V185H472"/><path d="M134 60H138V84H140"/></g>
+        <line class="today" x1="150" x2="150" y1="0" y2="226"/>
+      </g>
+    </svg>
+  </div>
+</div>
+</body>
+</html>

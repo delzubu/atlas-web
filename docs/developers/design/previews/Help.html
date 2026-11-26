@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- @dsCard group="Layout" height=560 subtitle="Help window: AppBar ? button, floating (drag, resize), docked right, own links and history" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · Help</title>
+<!-- Canonical tokens: the same stylesheet every Atlas app loads. -->
+<link rel="stylesheet" href="../tokens.css">
+</head>
+<body>
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-size:13px;line-height:18px}
+  .frame{position:relative;display:grid;grid-template-rows:var(--appbar-h) 1fr;grid-template-columns:minmax(0,1fr) 300px var(--help-w,0px);height:100vh;min-height:520px;overflow:hidden}
+  .bar{grid-column:1/-1;display:flex;align-items:center;gap:8px;padding:0 var(--space-3);background:var(--chrome-ink);color:var(--on-chrome)}
+  .ib{display:grid;place-items:center;width:28px;height:28px;border:0;border-radius:var(--radius-md);background:transparent;color:var(--on-chrome-muted);cursor:pointer}
+  .ib:hover,.ib[aria-expanded=true]{background:var(--chrome-hover);color:var(--on-chrome)}
+  .mark{display:grid;place-items:center;width:24px;height:24px;border-radius:var(--radius-md);background:var(--accent);color:var(--on-accent);font-weight:700}
+  .app{font-weight:600;font-size:15px}
+  .crumb{flex:1;color:var(--on-chrome-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .search{flex:0 1 300px;height:28px;padding:0 8px;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--chrome-line);border-radius:var(--radius-md);color:var(--on-chrome-muted);font-size:12px}
+  .av{width:28px;height:28px;border-radius:50%;background:var(--selected);color:var(--fg);display:grid;place-items:center;font-size:11px;font-weight:600}
+  .doc{padding:var(--space-4);background:var(--surface-2);overflow:hidden}
+  .canvas{height:100%;border:1px dashed var(--border);border-radius:var(--radius-lg);background:var(--bg);display:grid;place-items:center;color:var(--muted)}
+  .insp{border-left:1px solid var(--border);padding:var(--space-3)}
+  .insp h4{margin:0 0 8px;font-size:12px;color:var(--muted)}
+  .field{display:flex;align-items:center;gap:6px;margin:6px 0}
+  .field label{width:80px;color:var(--muted)}
+  .field select{flex:1;font:inherit}
+  .q{border:1px solid var(--border);background:var(--bg);color:var(--muted);border-radius:50%;width:16px;height:16px;font-size:10px;line-height:14px;padding:0;cursor:pointer}
+  .q:hover{color:var(--accent);border-color:var(--accent)}
+  svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+  .help{display:none;flex-direction:column;background:var(--surface);overflow:hidden}
+  .help.open{display:flex}
+  .help.floating{position:absolute;z-index:200;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-overlay)}
+  .help.docked{grid-row:2;grid-column:3;border-left:1px solid var(--border);position:relative}
+  .hbar{display:flex;align-items:center;gap:2px;height:32px;padding:0 4px;background:var(--surface-2);border-bottom:1px solid var(--border);user-select:none}
+  .floating .hbar{cursor:move}
+  .hb{border:0;background:transparent;color:var(--muted);width:26px;height:26px;border-radius:var(--radius-md);cursor:pointer}
+  .hb:hover:not(:disabled){background:var(--hover);color:var(--fg)}
+  .hb:disabled{opacity:.35;cursor:default}
+  .htitle{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);padding:0 6px}
+  .htitle b{color:var(--fg);font-weight:600}
+  .toc{border-bottom:1px solid var(--border);padding:4px 12px;font-size:12px}
+  .toc summary{cursor:pointer;color:var(--muted)}
+  .toc a{display:block;padding:2px 0 2px 8px}
+  .page{flex:1;overflow:auto;padding:var(--space-3) var(--space-4);font-size:14px;line-height:22px}
+  .page h1{font-size:var(--text-title);line-height:26px;margin:4px 0 8px}
+  .page h2{font-size:15px;margin:16px 0 4px}
+  .page table{border-collapse:collapse;font-size:12px;line-height:17px;width:100%}
+  .page th,.page td{border-bottom:1px solid var(--border);text-align:left;padding:4px 6px;vertical-align:top}
+  .page code{font-family:var(--font-mono);font-size:12px;background:var(--code-bg);padding:0 3px;border-radius:var(--radius-sm)}
+  .page blockquote{margin:8px 0;padding:6px 10px;border-left:3px solid var(--accent);background:var(--surface-2)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .cmd{display:inline-block;border:1px solid var(--border);border-radius:var(--radius-md);padding:0 6px;font-size:12px;color:var(--fg)}
+  .grip{position:absolute;right:0;bottom:0;width:14px;height:14px;cursor:nwse-resize;background:linear-gradient(135deg,transparent 50%,var(--border) 50%)}
+  .edge{position:absolute;left:-3px;top:0;bottom:0;width:6px;cursor:ew-resize}
+  .drop{position:absolute;top:var(--appbar-h);bottom:0;right:0;width:4px;background:var(--accent);display:none;z-index:250}
+</style>
+<div class="frame" id="frame">
+  <header class="bar">
+    <button class="ib" aria-label="Hide navigator"><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M6 3v10"/></svg></button>
+    <span class="mark">A</span><span class="app">Model</span>
+    <span class="crumb">/ demo / Contoso / <b style="color:var(--on-chrome);font-weight:400">Phoenix</b></span>
+    <span class="search">Search commands… <kbd>Ctrl K</kbd></span>
+    <button class="ib" id="helpBtn" aria-label="Help  F1" title="Help  F1" aria-expanded="false"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M6.3 6.2a1.8 1.8 0 1 1 2.4 1.7c-.5.2-.7.6-.7 1.1v.5"/><path d="M8 11.4v.1"/></svg></button>
+    <span class="av">BM</span>
+  </header>
+  <main class="doc"><div class="canvas">Graph canvas (Phoenix)</div></main>
+  <aside class="insp">
+    <h4>Link: Invest into automated build → Time to deploy</h4>
+    <div class="field"><label>Polarity</label><select><option>− opposite</option></select><button class="q" data-topic="links#polarity" aria-label="Help: polarity">?</button></div>
+    <div class="field"><label>Strength</label><select><option>strong</option></select><button class="q" data-topic="links#strength" aria-label="Help: strength">?</button></div>
+    <div class="field"><label>Timing</label><select><option>delayed</option></select><button class="q" data-topic="links#timing" aria-label="Help: timing">?</button></div>
+  </aside>
+  <section class="help" id="help" role="dialog" aria-modal="false" aria-labelledby="hTitle">
+    <div class="hbar" id="hbar">
+      <button class="hb" id="back" aria-label="Back  Alt+←">←</button>
+      <button class="hb" id="fwd" aria-label="Forward  Alt+→">→</button>
+      <span class="htitle" id="hTitle"></span>
+      <button class="hb" aria-label="Search help  Ctrl+F">⌕</button>
+      <button class="hb" id="dock" aria-label="Dock help"></button>
+      <button class="hb" id="close" aria-label="Close help">×</button>
+    </div>
+    <details class="toc"><summary>Contents</summary>
+      <a href="#" data-topic="start">Start</a><a href="#" data-topic="links">Concepts › Links</a><a href="#" data-topic="loops">Analysis › Loops</a><a href="#" data-topic="ftf">Modeling › Fixes that fail</a>
+    </details>
+    <article class="page" id="page"></article>
+    <div class="grip" id="grip" title="Resize"></div>
+    <div class="edge" id="edge" title="Resize"></div>
+  </section>
+  <div class="drop" id="drop"></div>
+</div>
+<script>
+const PAGES={
+ start:{crumb:'Start',html:`<h1>Model</h1><p>Model shows <b>what moves what</b>: variables, the policy levers that act on them, the feedback loops they form, and what a change does to the outcomes you care about.</p><blockquote>The model is qualitative: signs, strengths and delays, no numbers and no time axis.</blockquote><p>Next: <a data-topic="links">Links</a> · <a data-topic="loops">Loops</a> · <a data-topic="ftf">Recipe: fixes that fail</a></p><p>Suite: <a data-ext>Keyboard shortcuts</a></p>`},
+ links:{crumb:'Concepts › <b>Links</b>',html:`<h1>Links</h1><p>A link is a signed arrow from one variable or lever to another.</p><h2 id="polarity">Polarity</h2><p>Read it as: if the source rises, all else equal, does the target rise (<code>+</code>) or fall (<code>−</code>)?</p><table><tr><th>Field</th><th>Values (default)</th><th>Changes in the output</th></tr><tr><td>Polarity</td><td>+, − (+)</td><td>Loop type: an odd number of − makes a loop balancing. Direction in what-if.</td></tr><tr id="strength"><td>Strength</td><td>weak, medium, strong (medium)</td><td>What-if weight 0.3 / 0.6 / 0.9: which of two opposing paths wins, and whether a KPI is <i>mixed</i>.</td></tr><tr id="timing"><td>Timing</td><td>immediate, delayed (immediate)</td><td>Makes loops delayed, which <a data-topic="ftf">fixes that fail</a> needs; drives worse-before-better.</td></tr></table><p>See also <a data-topic="loops">Loops</a>. <span class="cmd">▸ Add link</span></p>`},
+ loops:{crumb:'Analysis › <b>Loops</b>',html:`<h1>Loops</h1><p><b>R</b> (reinforcing) amplifies a change; <b>B</b> (balancing) resists it. A loop's strength is its weakest <a data-topic="links">link</a>.</p><h2>Order</h2><p>Loops through a KPI come first, then stronger, then shorter.</p><blockquote>Loops longer than 12 links are not searched; the list says so.</blockquote>`},
+ ftf:{crumb:'Modeling › <b>Fixes that fail</b>',html:`<h1>Fixes that fail</h1><p>A quick fix relieves the problem now and feeds it later through a delayed reinforcing loop.</p><h2>Minimal structure</h2><table><tr><td>Cost overrun → Cut maintenance</td><td>+</td></tr><tr><td>Cut maintenance → Cost overrun</td><td>−</td></tr><tr><td>Cut maintenance → Breakdowns</td><td>+, delayed, strong</td></tr><tr><td>Breakdowns → Repair cost → Cost overrun</td><td>+, +</td></tr></table><p><span class="cmd">▸ Open as a new model</span></p><p>Matches only when the overrun has <i>good: down</i>; see <a data-topic="links#timing">Timing</a>.</p>`}};
+const $=id=>document.getElementById(id), help=$('help'), frame=$('frame');
+let hist=[], at=-1, state='closed', geo={x:0,y:56,w:440,h:430};
+function show(topic,push=true){const [p,anchor]=topic.split('#');const page=PAGES[p]||PAGES.start;
+  if(push){hist=hist.slice(0,at+1);hist.push(topic);at=hist.length-1}
+  $('hTitle').innerHTML='Model help › '+page.crumb;$('page').innerHTML=page.html;$('back').disabled=at<=0;$('fwd').disabled=at>=hist.length-1;
+  const el=anchor&&document.getElementById(anchor);if(el){el.scrollIntoView({block:'start'});el.style.background='var(--selected)';setTimeout(()=>el.style.background='',1200)}else $('page').scrollTop=0}
+function setState(s){state=s;help.className='help '+(s==='closed'?'':'open '+s);$('helpBtn').setAttribute('aria-expanded',s!=='closed');
+  frame.style.setProperty('--help-w',s==='docked'?geo.dw+'px':'0px');
+  $('dock').textContent=s==='docked'?'⧉':'⇥';$('dock').setAttribute('aria-label',s==='docked'?'Float help':'Dock help');
+  if(s==='floating')Object.assign(help.style,{left:geo.x+'px',top:geo.y+'px',width:geo.w+'px',height:geo.h+'px'});else Object.assign(help.style,{left:'',top:'',width:'',height:''});
+  $('grip').style.display=s==='floating'?'':'none';$('edge').style.display=s==='docked'?'':'none'}
+geo.dw=420;geo.x=Math.max(8,innerWidth-300-geo.w-16);
+function open(topic){if(state==='closed')setState('floating');show(topic||'start')}
+$('helpBtn').onclick=()=>state==='closed'?open('links'):setState('closed');
+$('close').onclick=()=>setState('closed');
+$('dock').onclick=()=>setState(state==='docked'?'floating':'docked');
+$('back').onclick=()=>{if(at>0){at--;show(hist[at],false)}};
+$('fwd').onclick=()=>{if(at<hist.length-1){at++;show(hist[at],false)}};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-topic]');if(a){e.preventDefault();open(a.dataset.topic)}});
+document.addEventListener('keydown',e=>{if(e.key==='F1'||(e.key==='?'&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))){e.preventDefault();state==='closed'?open('links'):setState('closed')}
+  if(e.altKey&&e.key==='ArrowLeft'&&help.contains(document.activeElement))$('back').click();if(e.altKey&&e.key==='ArrowRight'&&help.contains(document.activeElement))$('fwd').click()});
+function drag(handle,move,end){handle.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;const s={x:e.clientX,y:e.clientY,g:{...geo}};handle.setPointerCapture(e.pointerId);
+  const mv=ev=>move(ev,s),up=ev=>{handle.removeEventListener('pointermove',mv);handle.removeEventListener('pointerup',up);end&&end(ev)};handle.addEventListener('pointermove',mv);handle.addEventListener('pointerup',up)})}
+const clamp=(v,a,b)=>Math.max(a,Math.min(v,b));
+drag($('hbar'),(e,s)=>{if(state!=='floating')return;geo.x=clamp(s.g.x+e.clientX-s.x,0,innerWidth-geo.w);geo.y=clamp(s.g.y+e.clientY-s.y,40,innerHeight-60);help.style.left=geo.x+'px';help.style.top=geo.y+'px';$('drop').style.display=e.clientX>innerWidth-24?'block':'none'},
+  e=>{$('drop').style.display='none';if(state==='floating'&&e.clientX>innerWidth-24)setState('docked')});
+drag($('grip'),(e,s)=>{geo.w=clamp(s.g.w+e.clientX-s.x,320,innerWidth-geo.x);geo.h=clamp(s.g.h+e.clientY-s.y,240,innerHeight-geo.y);help.style.width=geo.w+'px';help.style.height=geo.h+'px'});
+drag($('edge'),(e,s)=>{geo.dw=clamp(s.g.dw-(e.clientX-s.x),320,720);frame.style.setProperty('--help-w',geo.dw+'px')});
+open('links');
+</script>
+</body>
+</html>

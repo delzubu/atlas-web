@@ -15,7 +15,9 @@ Most app work starts in `apps/<app>/`. Python services live in `api/` and React 
 1. [Set up a development environment]({{ site.baseurl }}{% link docs/developers/setup.md %})
 2. [Find your way around the modules]({{ site.baseurl }}{% link docs/developers/modules.md %})
 3. [Understand instance and edition deployment]({{ site.baseurl }}{% link docs/developers/deployment.md %})
-4. [See the SDK documentation outline]({{ site.baseurl }}{% link docs/developers/sdk.md %})
+4. [Explore SDK and integrations]({{ site.baseurl }}{% link docs/developers/sdk.md %})
+
+5. [Try a first integration]({{ site.baseurl }}{% link docs/developers/integration-example.md %})
 
 ## Design system
 

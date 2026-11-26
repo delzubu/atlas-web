@@ -36,6 +36,11 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 
 ## Writing pages
 
+- Home introduces the product and its value; Getting started provides separate paths for invited users, evaluators and operators. Describe model independence without claiming universal compatibility or pooled subscription allowances. Use actual reference screenshots with accurate captions; label illustrative examples.
+- Articles are a product-manager editorial blog: publish useful insights as they arise, with flexible depth and format. Keep existing article structure and style; do not turn the collection into a mandatory curriculum or duplicate the app reference.
+- Apps landing pages support task-oriented discovery; retain repository/module navigation for reference. Product availability and deployment packaging are distinct.
+- The Design section is a human-readable publication of Core's canonical guides. Preserve rule identifiers, source revision, assets and status qualifications. Refresh it when the source changes.
+
 - Put task walkthroughs in the relevant app guide under `docs/apps/`. In-app help in the source projects describes controls, screens and states and links to these walkthroughs. Keep published guide paths and anchors stable when app help links to them.
 
 - Front matter: `title`, `nav_order`, and for children `parent: <title>`; a section index uses `has_children: true` and a `permalink`. Link with `{{ site.baseurl }}{% link path.md %}` so Jekyll 3 validates the target and includes the project site prefix.

@@ -20,6 +20,12 @@ Atlas is a suite of working tools: kb-explorer, the workspace viewer, the map vi
 - **Conflicts.** For the logo and the brand hexes, the brand book wins. For anything in the product UI, this file wins.
 - **The scheme is deliberately conservative.** The product is a working surface: content carries the colour, chrome stays neutral. The brand's strong colours are used for identity, not for function. Publications and marketing use the brand book directly and may be louder.
 
+## Read the interface as four regions
+
+The AppBar establishes where you are and provides suite-wide commands. The Navigator helps you locate the item you want to work on. The Document is the main working surface, and the Inspector supplies its context and details. Keeping these roles separate is what allows the same shell to serve very different Atlas applications.
+
+[Open the shell preview]({{ site.baseurl }}{% link docs/developers/design/previews/Shell.html %}) · [AppBar]({{ site.baseurl }}{% link docs/developers/design/components/AppBar.md %}) · [Document header]({{ site.baseurl }}{% link docs/developers/design/components/DocHeader.md %}) · [Inspector]({{ site.baseurl }}{% link docs/developers/design/components/Inspector.md %})
+
 ## Principles
 
 1. **One shell, four regions.** Every app uses the same frame: AppBar (`appbar-h`), Navigator (`panel-w`), Document (DocHeader `docheader-h` + body) and Inspector (`inspector-w`). An app may leave a region empty, but it never invents a new one. A floating card, a second toolbar or a fixed side column is a missing Inspector tab.
@@ -40,7 +46,7 @@ Atlas is a suite of working tools: kb-explorer, the workspace viewer, the map vi
 
 ![Knowledge base desktop shell after the redesign]({{ site.baseurl }}{% link docs/developers/design/screenshots/kb-after-1920.png %})
 
-The desktop example shows how the navigator, document and inspector share the available width. The [interactive-looking static shell preview]({{ site.baseurl }}{% link docs/developers/design/previews/Shell.html %}) illustrates the layout in isolation. The [component reference]({{ site.baseurl }}{% link docs/developers/design/components/index.md %}) covers each region in detail.
+The desktop example shows how the navigator, document and inspector share the available width. The [static shell preview]({{ site.baseurl }}{% link docs/developers/design/previews/Shell.html %}) illustrates the layout in isolation. The [component reference]({{ site.baseurl }}{% link docs/developers/design/components/index.md %}) covers each region in detail.
 
 Design for the **laptop on a 1920×1080 screen first**. The browser viewport is about 1920×950. Tablet and phone must work but are not optimised. What "must work" means, and how an app that chooses to put the phone or tablet first does it, is [mobile.md]({{ site.baseurl }}{% link docs/developers/design/mobile.md %}) (the mobile layer: form factors, touch, typing, the Action bar, Sheet and FocusTask). Each app declares its target (`laptop`, `touch` or `phone-first`) in its `AGENTS.md`.
 
@@ -59,6 +65,8 @@ Design for the **laptop on a 1920×1080 screen first**. The browser viewport is 
 - **No reserved offsets.** The command dock is off by default. The ⌘K field in the AppBar replaces it.
 
 ## Color
+
+For a designer, the important distinction is between the identity of Atlas and the meaning of colour within a working interface. The aubergine and coral identify the product. Blue identifies interaction; status and data colours communicate their own separate meanings. The token tables below preserve these boundaries.
 
 **One theme: black on white, like a printed page, in an ink frame.** The AppBar is `chrome-ink` with `on-chrome` text; everything below it is the page. There is no dark mode, no theme toggle, and no `prefers-color-scheme` switching. The system ignores the OS theme, so the page always reads the same.
 

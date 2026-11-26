@@ -18,6 +18,12 @@ screens or flows, and run the [checklist](#checklist) before you call the work d
 (see Speed) are **design targets, not measurements**. The [gaps](#gaps-today) are what a read of the code found; they are not fixed by
 this file.
 
+## How to apply this guide
+
+Begin by describing the person's intended outcome and the sequence of decisions or actions needed to reach it. Next, decide which content must remain visible while they work. Only then choose the shared components and design the individual screens. The numbered rules below are retained so a design review can refer to a specific requirement, rather than merely expressing a preference.
+
+The checklist is a design-review instrument, not a claim that every existing app already meets all 38 rules.
+
 ## Relation to the other guides
 
 | Guide | Owns |

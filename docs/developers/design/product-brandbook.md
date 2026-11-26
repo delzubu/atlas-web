@@ -10,6 +10,10 @@ nav_order: 1
 This guide is the human-readable website edition of the [source specification](https://github.com/delzubu/atlas-core/blob/4a656981ba21c6139a3d3750e0cb76f8d706284a/docs/design/product-brandbook.md). It preserves the design rules and their identifiers; implementation status and measurements are those recorded in the source, not a fresh audit.
 > Product brand book · Version 1.0 · 2026-10-28
 
+## Reading this guide
+
+Use the first sections to understand the product promise and explain it consistently. Use the visual identity section when designing a publication, presentation or other branded material. The approved marks and colours are supplied as assets, with rules for size, placement and use.
+
 ## 1. Brand at a glance
 
 Atlas brings a workshop approach to knowledge work: the expert and the agent develop the result together, even when the initial brief is incomplete. The identity supports that purpose, from product communications to the smallest use of the mark.
@@ -90,6 +94,10 @@ Illustrative capabilities and their contribution to the promise:
 These are descriptions of product intent, not a guarantee that every workflow is fully implemented or production-ready. Verify current capability before making feature claims.
 
 **Do not rename** repositories, packages, namespaces, MCP servers, app IDs, APIs, environment variables or existing technical identifiers solely for this branding exercise. Keep app names functional.
+
+### Independence from the AI provider
+
+Atlas keeps project artifacts and their working context separate from the agent that created them. A person can use compatible clients across model providers and subscriptions, then inspect and refine the same work in Atlas. This is a practical consequence of persistent artifacts and expert agency, rather than a promise of universal client support or shared subscription allowances. See the [co-creation articles]({{ site.baseurl }}{% link docs/articles/index.md %}).
 
 ## 5. Audience and value proposition
 
@@ -246,3 +254,13 @@ Graphite text on White or Mist. Aubergine for headlines, the symbol and accents.
 The product UI shares the neutrals exactly (White, Mist, Border, Graphite) and uses Aubergine and Coral **only as identity colours**: the mark, and a few places on the launcher. Interaction, status and data colours are UI-only. [ui_design.md]({{ site.baseurl }}{% link docs/developers/design/ui_design.md %}) (Color) lists every UI colour and its one job. The product stays white-first: do not recolour semantic icons, status or content surfaces for brand consistency.
 
 **Superseded concepts:** Earlier blue variants are archived in the repository for provenance only. They are not part of the active brand book, must not be used in slides or UI, and are intentionally not illustrated here.
+
+
+## Historical design assets
+
+The following files are retained for comparison and provenance only. They are **not approved alternatives** to the current identity and should not be used in new product UI or publications.
+
+- [Blue and amber logo]({{ site.baseurl }}{% link docs/developers/design/assets/atlas-logo-blue-amber.svg %})
+- [Blue and light logo]({{ site.baseurl }}{% link docs/developers/design/assets/atlas-logo-blue-light.svg %})
+- [Blue and teal logo]({{ site.baseurl }}{% link docs/developers/design/assets/atlas-logo-blue-teal.svg %})
+- [Historical palette comparison]({{ site.baseurl }}{% link docs/developers/design/assets/atlas-palette-comparison.svg %})

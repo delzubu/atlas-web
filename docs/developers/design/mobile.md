@@ -17,6 +17,12 @@ so every such app feels the same.
 for the apps that follow. The shell does part of it today (see *What the shell does today*). The rest is the rule for new work. The
 gaps are listed at the end.
 
+## Start with the job, not the device
+
+A laptop is usually the main creation surface. A tablet is well suited to reading and minor updates; a phone is useful for short review, confirmation and focused tasks. The target levels below distinguish an app that must remain usable on small screens from one whose principal workflow is deliberately designed for touch.
+
+The guide retains the original implementation status and open gaps so readers can distinguish requirements from completed features.
+
 ## Relation to the rest of the system
 
 - **Same system, a different shape.** Tokens, colours and their jobs, type styles, icons, voice, the four regions and the "one home

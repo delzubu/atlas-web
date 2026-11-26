@@ -10,6 +10,11 @@ has_toc: false
 
 Atlas — The Light Factory helps you explore, design and refine work that does not come with a finished blueprint. These articles explain practical ways to co-create with AI while keeping your work in a shared environment, independent of any particular model provider.
 
+## The co-creation workflow
+
+- [A practical workflow for co-creation]({{ site.baseurl }}{% link docs/articles/structured-co-creation.md %}) — Separate inputs, interpretation, research, modelling and rendering, with review throughout.
+- [Creating a technical presentation with AI]({{ site.baseurl }}{% link docs/articles/technical-presentation.md %}) — Apply the method to an Atlas presentation, from audience and evidence to a reviewed storyline and slides.
+
 ## Co-creating with AI
 
 Follow these six articles in order, or start with the topic you need. A fictional local-history exhibition provides a continuous worked example.

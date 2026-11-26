@@ -12,6 +12,8 @@ Suppose you have been asked to prepare a small exhibition on how a town's market
 
 This is a good example of co-creation: the work evolves as you understand the problem. You and an agent investigate it together, build an explicit representation of what you learn, review it and finally communicate the result.
 
+For the general working method, including separate report, research and model folders and cross-domain consolidation, read [A practical workflow for co-creation]({{ site.baseurl }}{% link docs/articles/structured-co-creation.md %}). This article illustrates the approach with a local-history example.
+
 The town and example evidence below are fictional. Replace them with your own sources when following the workflow.
 
 ![From inputs through research and modelling to reviewed output]({{ site.baseurl }}{% link assets/images/articles/research-to-output.svg %})

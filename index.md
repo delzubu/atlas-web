@@ -34,6 +34,6 @@ Atlas is model-agnostic. Keep your project files, models, review comments and wo
 
 Connections use the Model Context Protocol (MCP); available operations depend on the client, subscription, configuration and permissions. Atlas does not include or combine third-party model subscriptions.
 
-[Learn how to co-create with AI]({{ site.baseurl }}{% link docs/articles/index.md %}).
+[Learn how to co-create with AI]({{ site.baseurl }}{% link docs/articles/index.md %}) or start with [A practical workflow for co-creation]({{ site.baseurl }}{% link docs/articles/structured-co-creation.md %}).
 
 [See what changed in Atlas]({{ site.baseurl }}{% link docs/changelog.md %}).

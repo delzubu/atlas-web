@@ -8,7 +8,7 @@ nav_order: 1
 
 This small exercise demonstrates the core Atlas experience: a person and an agent editing and reviewing the same persistent artifact. You need an Atlas instance, Workspace writer access and a compatible connected agent. If you are evaluating the product, you can inspect the example files below without an account.
 
-[Download or inspect the example files]({{ site.baseurl }}{% link assets/examples/first-project/README.md %}). The before and after drafts and review note are illustrative, not exported application activity.
+[Inspect the example files](https://github.com/delzubu/atlas-web/blob/main/assets/examples/first-project/README.md). The before and after drafts and review note are illustrative, not exported application activity.
 
 ## 1. Create the project
 

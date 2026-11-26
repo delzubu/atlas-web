@@ -1,7 +1,7 @@
 # Atlas documentation site: Jekyll + Just the Docs, themed with the Atlas brand
 # (core/docs/design/product-brandbook.md section 12). See AGENTS.md before changing.
 title: Atlas
-description: "Atlas, the Light Factory: documentation for the Atlas suite."
+description: "Atlas — The Light Factory: human–AI co-creation for bespoke knowledge work."
 # Project page of github.com/delzubu/atlas-web. With a custom domain, set url to
 # it and baseurl to "".
 url: https://delzubu.github.io

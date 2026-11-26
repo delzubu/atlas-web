@@ -42,6 +42,7 @@ plugins:
   - jekyll-include-cache
 
 exclude:
+  - examples/
   - .commands/
   - AGENTS.md
   - CLAUDE.md

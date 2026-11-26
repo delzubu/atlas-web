@@ -36,6 +36,8 @@ Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the lo
 
 ## Writing pages
 
+- Keep sample project files in the repository's `examples/` directory, excluded from Jekyll publication. Link to their GitHub folder (`tree/main/examples/...`), not to rendered sample pages.
+
 - Home introduces the product and its value; Getting started provides separate paths for invited users, evaluators and operators. Describe model independence without claiming universal compatibility or pooled subscription allowances. Use actual reference screenshots with accurate captions; label illustrative examples.
 - Articles are a product-manager editorial blog: publish useful insights as they arise, with flexible depth and format. Keep existing article structure and style; do not turn the collection into a mandatory curriculum or duplicate the app reference.
 - Apps landing pages support task-oriented discovery; retain repository/module navigation for reference. Product availability and deployment packaging are distinct.

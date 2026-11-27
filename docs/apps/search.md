@@ -17,6 +17,14 @@ Use Search to query the indexes available on your Atlas instance. Refine a searc
 
 Your administrator configures shared database connections. Use Knowledge base to browse and edit articles directly.
 
+## Index documents or Python code
+
+In Core 1.2.0, a shared database can hold **Documents**, **Code** or **Any graph**. In **Statistics**, select a writable document dataset and choose **Add documents…** to queue text, a file, a web page or a Confluence source. A `search-intake` worker on an authorised computer processes the job. Follow its status in Search.
+
+From the command line, use `search-intake login` with Search writer access, then run `search-intake intake --database <database> <dataset> <source>` to add and process a source. For a Code dataset, give it a local Python file or folder. Naming the database distinguishes datasets with the same name. See the [indexing CLI guide](https://github.com/delzubu/atlas-core/blob/core-v1.2.0/apps/search/intake/AGENTS.md) for commands and input formats.
+
+Search administrators choose the type under **Holds** when adding a database. In **All settings…**, use **Datasets** to define and preview how an **Any graph** database is divided for native queries. Use **Search and models** to select the database’s embedding and reranker models from the options configured in Identity.
+
 ## Query your own Neo4j database
 
 With Search writer access, open **Your databases** and choose **Connect a database…**. Supply a name, a reachable HTTPS address for the Neo4j Query API and the database credentials. Search tests the connection before saving it. For setup on your own computer, see the [Neo4j connection guide]({{ site.baseurl }}{% link docs/apps/search/connect-local-neo4j.md %}).

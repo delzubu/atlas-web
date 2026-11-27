@@ -50,6 +50,8 @@ Follow `INSTALL.md` and `devops/DEPLOY.md` in the Core repository for the full s
 
 Follow the Core deployment guide for the upgrade. Run `atlas-admin bootstrap` again when a release adds Identity storage containers, as Core 1.1.2 does for temporary Search connections. Bootstrap is safe to rerun. Identity can also create a missing known container on first use. Seed the updated Core library to make the release’s playbooks available.
 
+For Search in Core 1.2.0, configure the shared inference service and available models in Identity under **Administration → Settings**. Move inference settings from existing database connections before saving those connections in the new UI. If your deployment uses doc-indexer for reranking, import its updated `ui_rerank` workflow to support per-database model selection. Run `search-intake worker` on an authorised computer to process queued indexing jobs. [Core upgrade and inference details](https://github.com/delzubu/atlas-core/pull/36)
+
 ## Add Hobby or Work
 
 1. Have an instance administrator create or retrieve the instance deploy key in Identity under **Administration → Modules → Deploy key**.

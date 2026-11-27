@@ -39,6 +39,8 @@ For an edition, `atlas-test --manifest testing/suites.json --runner pytest` or `
 
 Run `dev-install.ps1` once for a checkout and Python environment, then use `git pull` for ordinary source updates. Editable Python installs read the updated source directly. Rerun the installer when a change adds a module or Python package, adds or changes a CLI entry point, alters dependency metadata, or when you switch to a fresh Python environment. Refresh npm dependencies when the lockfile changes. An edition pull does not refresh the installed Core release.
 
+Core 1.2.0 adds the `search-intake` CLI. Rerun Core’s `dev-install.ps1` after upgrading an existing developer checkout to install the command.
+
 ## Instance configuration
 
 If your development task needs instance settings, use the project’s `.env.example` files as the configuration reference and set `ATLAS_INSTANCE` to select the instance. With `ATLAS_ENV_PROVIDER` configured, `dev-install.ps1` also materialises the settings. For a settings-only change, use the provider directly instead of reinstalling dependencies. See [deployment settings]({{ site.baseurl }}{% link docs/developers/deployment.md %}#prepare-deployment-settings).

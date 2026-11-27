@@ -30,3 +30,7 @@ Follow these six articles in order, or start with the topic you need. A fictiona
 
 - [KB versus Search — which one to use?]({{ site.baseurl }}{% link docs/articles/kb-versus-search.md %}) — Choose between lightweight knowledge navigation and advanced semantic retrieval.
 - [Make Atlas your own: templates, playbooks and the library]({{ site.baseurl }}{% link docs/articles/make-atlas-your-own.md %}) — Preserve successful working methods and share reusable starting points.
+
+## Search and retrieval
+
+- [Search beyond documents]({{ site.baseurl }}{% link docs/articles/search-beyond-documents.md %}) — A look at the Search 1.2.0 migration, document intake, experimental Python indexing and possible future representations.

@@ -54,3 +54,5 @@ Search requires configured database and inference resources for semantic retriev
 [Query your own graph database]({{ site.baseurl }}{% link docs/playbooks/core.md %}#query-your-graph) helps an agent inspect a Neo4j schema and answer a question using evidence from the graph.
 
 [Research a D&D topic]({{ site.baseurl }}{% link docs/playbooks/hobby.md %}#dnd-research-topic) is a workflow for gathering and recording findings from knowledge sources, including disagreements and gaps.
+
+For the product background and the Python indexing experiment, read [Search beyond documents]({{ site.baseurl }}{% link docs/articles/search-beyond-documents.md %}).

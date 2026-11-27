@@ -152,7 +152,8 @@ That suits a connection that lasts a day. For an address that stays the same, se
    - **Name**: what you will see in the navigator, for example `Laptop code graph`.
    - **Database address**: the `https://….trycloudflare.com` address from step 4.
    - **User** and **Password**: those of step 2 (or `search_reader`).
-   - **Database name**: only when it is not `neo4j`.
+   - **Holds**: choose **Any graph** for a graph with its own schema, or **Documents** for an Atlas document graph.
+   - Under **More settings**, enter the **Database name** if it differs from `neo4j`.
    - Leave the access and embedding fields empty for now.
 3. Press **Connect**. Search tries the database before it saves anything:
    - **unreachable**: the tunnel is not running, the computer is asleep, or the address is mistyped.
@@ -190,9 +191,8 @@ Ollama is the example here; any server that speaks the OpenAI-compatible `/v1/em
    ```
 
    A list of numbers in the answer means it works.
-4. In Search, connect the database (remove and connect it again if it is already there) with, in addition:
-   - **Embedding model**: the model, for example `nomic-embed-text`. If one vector index was built with another model, add a line
-     `index-name=model` under **Other models**.
+4. In Search, add the database or choose **Edit** beside its existing connection. Under **More settings**, fill in:
+   - **Embedding model**: select the model used to build the vector index, for example `nomic-embed-text`. A model missing from the list can be added by an instance administrator in [Search settings]({{ site.baseurl }}{% link docs/apps/identity.md %}#search-settings).
    - **Embedding endpoint**: the Ollama tunnel's address followed by `/v1`, for example `https://other-random-words.trycloudflare.com/v1`.
    - **Query embedders**: leave it at `endpoint`.
 
@@ -250,7 +250,7 @@ domain whose name servers are Cloudflare's.
 | **unreachable** | The tunnel is stopped, the computer sleeps, or the quick-tunnel address changed | Start the tunnel; edit the database and paste its new address |
 | **bad_answer** | Not Neo4j's Query API at that address | Check step 3 through the tunnel; check the port and the Neo4j version |
 | A query stops after 30 seconds | Search's limit | Add a `LIMIT`, narrow the statement; set `db.transaction.timeout` so the database stops too |
-| Vector search refused: no model | No embedding model on the connection | Connect it again with Embedding model (step 6) |
+| Vector search refused: no model | No embedding model on the connection | Edit the connection and select its embedding model (step 6) |
 | Vector search refused: another size | The model is not the one that built the index | Use the index's own model |
 | Vector search: the endpoint cannot be reached | The Ollama tunnel is stopped, or it lacks `--http-host-header` | Start it as in step 6 |
 | The database has gone from Search | A day without use passed | Connect it again |

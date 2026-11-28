@@ -1,6 +1,15 @@
 # AGENTS.md
 
-Guidance for agentic systems working in `web/` (atlas-web). Rules that apply everywhere are in `core/AGENTS.md`.
+Guidance for agentic systems working in atlas-web. This file is self-contained.
+
+The site describes other Atlas repositories. `core:<path>` names a file of atlas-core: read it from a local checkout if there is one, otherwise from https://github.com/delzubu/atlas-core. The same applies to the other module repositories under https://github.com/delzubu.
+
+## Working rules
+
+- Before creating, replacing, moving or deleting a file, check whether it exists, including untracked files. Read before editing; never overwrite with a template. Get approval before anything that discards the owner's work.
+- Meet the request as stated, with the smallest coherent change. Ask first about a real design choice the request leaves open, with a recommendation.
+- Run only the checks that cover the change, and report what you ran and what you could not verify.
+- Keep the owner's uncommitted files out of commits.
 
 ## Purpose
 
@@ -20,18 +29,18 @@ The public documentation site of Atlas, published with GitHub Pages from `github
 | `_sass/color_schemes/atlas.scss` | The `atlas` colour scheme: brand palette mapped onto the theme's variables |
 | `_sass/custom/custom.scss` | The few overrides: system sans, Aubergine headings, one Coral underline per page, focus ring |
 | `_includes/head_custom.html` | Favicon and theme colour |
-| `assets/images/`, `favicon.svg` | Logo files, copied from `core/docs/design/assets/` |
+| `assets/images/`, `favicon.svg` | Logo files, copied from `core:docs/design/assets/` |
 | `index.md`, `404.md` | Home page and not-found page |
 | `docs/changelog.md`, `docs/changelog/` | Release-date index under Home and one detail page per date |
 | `docs/` | Content. `docs/apps/` holds bundle and app guides. `docs/playbooks/` holds the library guide and template catalog. `docs/developers/` covers development and deployment |
 
 ## Brand and design
 
-Follow `core/docs/design/product-brandbook.md` (§12 is the one source of the logo and palette) and the publication voice (§7). This is a publication, so §12.3 applies, not the product UI rules:
+Follow `core:docs/design/product-brandbook.md` (§12 is the one source of the logo and palette) and the publication voice (§7). This is a publication, so §12.3 applies, not the product UI rules:
 
 - Graphite text on White or Mist; Aubergine for headlines, the symbol and accents; Coral only for the curved underline and at most one other highlight per page. Links keep the product's interaction blue (`#2563eb`), never Aubergine or Coral.
 - One light theme. No dark mode, no recolouring of the logo, no superseded blue marks. Sentence case in headings and labels.
-- The logo files are copies. If the brand changes, copy the new files from `core/docs/design/assets/` and update the palette in `atlas.scss` from §12.2 in the same change.
+- The logo files are copies. If the brand changes, copy the new files from `core:docs/design/assets/` and update the palette in `atlas.scss` from §12.2 in the same change.
 - Verify current capability before making a feature claim; the brand book says so too. Describe apps from their own `AGENTS.md` and specs, not from memory.
 
 ## Writing pages
